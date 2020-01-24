@@ -36,7 +36,7 @@ class NlsSoapClient extends SoapClient
                 die;
             }
             \Yii::$app->getSession()->setFlash('error', '<strong>Authentication Failed:</strong> username or password incorrect.');
-            header('Location: ' . Url::to('@web/site/login'));
+            header('Location: ' . Url::to('@web/site/index'));
             die();
         }  
         
