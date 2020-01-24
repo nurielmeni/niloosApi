@@ -170,6 +170,17 @@ class SiteController extends MemadController
     }
     
     
+    /**
+     * Displays about page.
+     *
+     * @return string
+     */
+    public function actionNiloosError()
+    {
+        return $this->render('niloos-error');
+    }
+    
+    
     
    
     
