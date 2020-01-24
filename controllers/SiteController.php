@@ -177,6 +177,7 @@ class SiteController extends MemadController
      */
     public function actionNiloosError()
     {
+        $this->layout = 'error';
         return $this->render('niloos-error');
     }
     
