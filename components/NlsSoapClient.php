@@ -30,12 +30,14 @@ class NlsSoapClient extends SoapClient
     }
     public function handleException($e)
     {
-        if (strpos($e->getMessage(), 'Security Service Evaluate Failed') !== false) {
+        $message = $e->getMessage();
+        if (strpos($message, 'Security Service Evaluate Failed') !== false) {
             if ($e->getTrace()[0]['args'][1][0]->enc_value[0]->enc_value == 'seevprod\List') {
                 echo "Could not connect to Hunter Services! check youer credentials.";
                 die;
             }
             \Yii::$app->getSession()->setFlash('error', '<strong>Authentication Failed:</strong> username or password incorrect.');
+            \Yii::$app->getSession()->setFlash('info', '<strong>Transaction Code: </strong>' . $e->transactionCode . '<p><strong>Message: </strong>' . $message . '</p>');
             header('Location: ' . Url::to('@web/error/niloos-error'));
             die();
         }  
