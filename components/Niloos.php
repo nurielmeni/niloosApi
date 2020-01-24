@@ -43,7 +43,9 @@ class Niloos
         $this->settingsClass = new Settings();
         
         // Flush cache
-        //$this->cache->flush();
+        if (key_exixts('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
+            $this->cache->flush();
+        }
             
         $this->settings = $this->settingsClass->getSettings();
         $this->setProperties($this->settings);
@@ -169,7 +171,9 @@ class Niloos
      */
     public function categories($parentId = null)
     {
-        // $this->cache->flush();
+        if (key_exixts('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
+            $this->cache->flush();
+        }
         $languageCode = $this->languageCode;
         
         $res = \Yii::$app->cache->getOrSet('categories', function () use ($parentId, $languageCode){
@@ -237,7 +241,9 @@ class Niloos
     }
     
     public function getListByListName($listName) {
-        //$this->cache->flush();
+        if (key_exixts('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
+            $this->cache->flush();
+        }
         $languageCode = $this->languageCode;
         
         $res = \Yii::$app->cache->getOrSet('List_' . $listName, function () use ($listName, $languageCode){
@@ -279,7 +285,9 @@ class Niloos
      * @return Jobs by filter
      */
     public function jobsGetByFilter($filter, $cacheKey = 'niloos_search_result') {
-        // $this->cache->flush();
+        if (key_exixts('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
+            $this->cache->flush();
+        }
         return $this->cache->getOrSet($cacheKey, function () use ($filter){
                 try {
                     $this->setClient('cards');
