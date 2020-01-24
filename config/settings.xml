@@ -11,7 +11,7 @@
     <nlsSecurityWsdlUrl>https://hunterdirectory.hunterhrms.com/SecurityService.svc?wsdl</nlsSecurityWsdlUrl>
     <nlsDirectoryWsdlUrl>https://hunterdirectory.hunterhrms.com/DirectoryManagementService.svc?wsdl</nlsDirectoryWsdlUrl>
     <nlsSecurityDomain>memad3</nlsSecurityDomain>
-    <nlsSecurityUsername>jobsSite</nlsSecurityUsername>
+    <nlsSecurityUsername>JobsSite</nlsSecurityUsername>
     <nlsSecurityPassword>Pass2019</nlsSecurityPassword>
     <searchServiceWsdlUrl>https://huntercards.hunterhrms.com/HunterCards.svc?wsdl</searchServiceWsdlUrl>
     <languageCode>1033</languageCode>
