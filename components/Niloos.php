@@ -43,7 +43,7 @@ class Niloos
         $this->settingsClass = new Settings();
         
         // Flush cache
-        if (key_exixts('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
+        if (key_exists('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
             $this->cache->flush();
         }
             
@@ -171,7 +171,7 @@ class Niloos
      */
     public function categories($parentId = null)
     {
-        if (key_exixts('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
+        if (key_exists('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
             $this->cache->flush();
         }
         $languageCode = $this->languageCode;
@@ -241,7 +241,7 @@ class Niloos
     }
     
     public function getListByListName($listName) {
-        if (key_exixts('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
+        if (key_exists('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
             $this->cache->flush();
         }
         $languageCode = $this->languageCode;
@@ -285,7 +285,7 @@ class Niloos
      * @return Jobs by filter
      */
     public function jobsGetByFilter($filter, $cacheKey = 'niloos_search_result') {
-        if (key_exixts('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
+        if (key_exists('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
             $this->cache->flush();
         }
         return $this->cache->getOrSet($cacheKey, function () use ($filter){
