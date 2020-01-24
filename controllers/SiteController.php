@@ -168,23 +168,7 @@ class SiteController extends MemadController
         $employees = Staff::find()->all();
         return $this->render('about', ['employees' => $employees]);
     }
-    
-    
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionNiloosError()
-    {
-        $this->layout = 'error';
-        return $this->render('niloos-error');
-    }
-    
-    
-    
-   
-    
+        
     /**
      * Login action.
      *

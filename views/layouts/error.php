@@ -29,7 +29,9 @@ AppAsset::register($this);
     <meta property="og:image" content="<?= Url::to('@web/images/logo.png') ?>" />
 
     <link rel="icon" type="image/png" href="<?= Url::to('@web/images/logo.png') ?>" />
+    <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <?php $this->head() ?>
 </head>
 <body dir="rtl">
 <?php $this->beginBody() ?>
@@ -43,10 +45,31 @@ AppAsset::register($this);
             'class' => 'navbar-default navbar-sttaic-top',
         ],
     ]);
+    echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-right'],
+        'items' => [
+            ['label' => 'בית', 'url' => ['/site/index']],
+            Yii::$app->user->isGuest ? (
+                ['label' => 'כניסה', 'url' => ['/site/login']]
+            ) : (
+                '<li>'
+                . Html::beginForm(['/site/logout'], 'post')
+                . Html::submitButton(
+                    'יציאה (' . Yii::$app->user->identity->username . ')',
+                    ['class' => 'btn btn-link logout']
+                )
+                . Html::endForm()
+                . '</li>'
+            )
+        ],
+    ]);
     NavBar::end();
     ?>
 
     <div class="container">
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
