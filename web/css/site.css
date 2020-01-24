@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css?family=Assistant:200,300,400,700,800&display=swap');
+
+html,
+body {
+    height: 100%;
+    font-family: 'Assistant', sans-serif;
+    font-size: 18px;
+    color: #004374;
+}
+
+.text-extra-light {
+    font-weight: 200;
+}
+
+.text-extra-bold {
+    font-weight: 800;
+}
+
+.wrap {
+    height: auto;
+    min-height: calc(100% - 410px);
+    margin: 0 auto;
+}
+
+.wrap > main {
+    height: 100%;
+    margin-top: -126px;
+}
+
+nav .container {
+    padding: 24px 0;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.fg-white a {
+    color: #fff;
+}
+
+.fg-blue a {
+    color: #004374;
+}
+
+ul.navbar-nav {
+    margin-left: 20px;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: unset;
+}
+
+.navbar-toggle span.icon-bar {
+    background-color: #004374;
+}
+
+nav .navbar-header li.nav-item-employers {
+    height: 40px;
+    border-radius: 20px;
+    margin: 5px auto;
+    background-color: #004374;
+}
+
+nav .navbar-header li.nav-item-employers a {
+    color: #ffffff;
+    padding: 10px 30px;
+}
+
+main section.header {
+    min-height: 620px;
+    height: 55vw;
+    background: url('../images/surfer.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+section.header h1 {
+    font-size: 85px;
+    line-height: 80px;
+    margin: 0;
+}
+
+section.header .actions {
+    margin-top: 7.5vw;
+}
+
+section.header .actions > a {
+    margin: 10px;
+}
+
+main section.about {
+    min-height: 60vw;
+    background: linear-gradient(0deg, rgba(1, 53, 92, 0.7), rgba(1, 53, 92, 0.7)), url(../images/about-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+main section.customers {
+    max-width: 1400px;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.memad-section-title {
+    width: 400px;
+    margin: 50px auto;
+    border-bottom: 1px solid #81f3ff;
+    line-height: 30px;
+    font-size: 28px;
+    padding-bottom: 14px;
+    color: #004374;}
+
+.footer {
+    background: url('../images/home-bg.png') no-repeat center center;
+    background-size: cover;
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+    
+footer .form-group label {
+    width: 236px;
+    text-align: right;
+}
+
+.memad3-jumbotron {
+    text-align: center;
+    padding-top: 112px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+
+.navbar .navbar-header {
+    float: left;
+}
+
+.navbar .navbar-header .navbar-toggle {
+    margin-top: 28px;
+}
+
+
+/******** SECTION ABOUT *********/
+section.about .row {
+    max-width: 800px;
+    padding-top: 84px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 20px;
+}
+
+section.about .row logo-side p:last-of-type {
+    font-size: 16px;
+    font-weight: bold
+}
+
+
+section.about .row .text-side {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+section.about .row .text-side p {
+    font-size: 16px;
+}
+
+section.about .row .text-side p.actions {
+    margin-top: 20px;
+}
+
+
+/*************** ABOUT PAGE ****************/
+div.wrap.site-about nav .navbar-header li.nav-item-employers {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+div.wrap.site-about header {
+    background: linear-gradient(0deg, rgba(1, 53, 92, 0.5), rgba(1, 53, 92, 0.5)), url('../images/about-header-bg.jpg') no-repeat center;
+    background-size: cover;
+    min-height: 385px;
+    background-position-y: calc(100% + 13vw);
+}
+
+header h1 {
+    padding-top: 150px;
+}
+
+article.about {
+    background: url('../images/about-article-bg.png') no-repeat center center;
+    background-size: cover;
+    padding: 70px 0;
+}
+
+article.about > div.row {
+    max-width: 800px;
+}
+
+article.about > div.row > div {
+    padding: 20px;
+}
+
+section.about-employees > div.panels-employees {
+    max-width: 1400px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+/*********** CONTACT *************/
+.site-contact header {
+    height: 25vw;
+    max-height: 450px;
+    min-height: 300px;
+    background: linear-gradient(0deg, rgba(1, 53, 92, 0.5), rgba(1, 53, 92, 0.5)), url('../images/contact.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.site-employers .site-contact header {    
+    background: linear-gradient(0deg, rgba(1, 53, 92, 0.5), rgba(1, 53, 92, 0.5)), url('../images/contact-employers.jpg') no-repeat center center;
+    background-position: -270px -520px;
+}
+
+.site-contact h1 {
+    margin: 20px 0;
+}
+
+.contact-body {
+    background: url('../images/home-bg.png') no-repeat center center;
+    background-size: cover;
+    padding: 60px 0;
+    margin: 0 auto;
+}
+
+.contact-body.employers {
+    background: #effcff;
+}
+
+.contact-body .employer-info {
+    border-radius: 10px;
+    height: calc(100% - 15px);
+    box-shadow: 0 10px 50px 0 rgba(81, 87, 88, 0.31);
+    padding: 40px;
+}
+
+.contact-body .employer-info p.first {
+    padding-left: 65px;
+}
+
+.contact-body .employer-info p.second {
+    padding-left: 130px;
+}
+
+.contact-body .employer-info p.third {
+    padding-left: 200px;
+}
+
+.contact-body .map {
+    background: url('../images/contact-map.jpg') no-repeat center center;
+    background-size: cover;
+    height: calc(100% - 38px);
+}
+
+.contact-body > div {
+    width: 580px;
+    padding: 25px;
+    min-height: 315px;
+}
+
+form#contact-form {
+    padding-top: 15px;
+}
+
+form .inline-fields > div,
+form button[type="submit"] {
+    width: calc(50% - 10px);
+    min-width: 250px;
+}
+
+/************** JOBS ********************/
+header.header-jobs {
+    background: linear-gradient(0deg, rgba(1, 53, 92, 0.5), rgba(1, 53, 92, 0.5)), url(../images/jobs-bg.jpg) no-repeat center;
+    background-size: cover;
+    min-height: 385px;
+    background-position-y: calc(100% + 13vw);
+}
+
+header.header-jobs.single-job {
+    background: linear-gradient(0deg, rgba(1, 53, 92, 0.5), rgba(1, 53, 92, 0.5)), url(../images/job-bg.jpg) no-repeat center top;
+    background-size: cover;
+}
+
+main .site-jobs .memad-search-wrapper {
+    padding-top: 50px;
+    padding-bottom: 25px;
+    background-color: #effcff;
+}
+
+.site-jobs section.job-list {
+    column-count: auto;
+    max-width: 1400px;
+    padding: 80px;
+    column-width: 350px;
+    column-gap: 3em;
+}
+
+.site-job .site-jobs section.job-list {
+    column-width: auto;
+    max-width: 900px;
+}
+
+.site-jobs section.job-list > div {
+    break-inside: avoid;
+}
+@media (min-width: 767.1px) and (max-width: 816px) {
+    .container {
+        width: 100% !important;
+    }
+    div.memad-logo-nav-wrap {
+        width: 180px !important;
+    }
+    div.memad-logo-nav-wrap > div.memad-logo-nav > span:first-of-type {
+        font-size: 22px !important;
+    }
+}
+
+@media (min-width: 816.1px) {
+    .container {
+        width: 816px !important;
+    }
+}
+
+@media (min-width: 1100px) {
+    .container {
+        width: 84% !important;
+    }
+    
+    header.header-jobs.single-job {
+        background-position-y: calc(100% + 40vw);
+    }
+}
+
+@media (max-width: 1400px) {
+    section.about-employees > div.panels-employees {
+        max-width: 1040px;    
+    }
+}
+
+@media(max-width:1200px) {
+    section.header h1 {
+        font-size: 65px;
+        line-height: 60px; 
+    }     
+}
+
+@media (max-width: 1040px) {
+    section.about-employees > div.panels-employees {
+        max-width: 700px;  
+    }
+}
+
+@media(max-width:767px) {
+    nav .container {
+        padding: 0;
+    }
+    
+    .navbar-collapse.collapse.in {
+        background-color: rgba(0, 42, 74, 0.95);
+        text-align: center;
+        margin: 0;
+        width: 100%;
+    }
+    
+    nav .navbar-collapse li a {
+        color: #fff;
+    }
+    
+    nav li.nav-item-employers {
+        background-color: transparent !important;
+        border: 1px solid #fff;
+        max-width: 140px;
+        margin: 5px auto;
+    }
+    
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+    
+    section.header h1 {
+        font-size: 40px;
+        line-height: 40px; 
+    }       
+    
+    ul.navbar-nav {
+        margin: 20px 0;
+        padding: 0 30px;
+    }
+    footer .links.flex.space-around {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 700px) {
+    section.about-employees > div.panels-employees {
+        max-width: 360px;    
+    }
+}
+
+@media (max-width: 600px) {
+    .site-jobs header.header-jobs {
+        background-position-y: 100%;
+    }
+    
+    div.memad-logo-nav-wrap {
+        width: 180px !important;
+    }
+    div.memad-logo-nav-wrap > div.memad-logo-nav > span:first-of-type {
+        font-size: 22px !important;
+    }
+    
+    .visible-xs.memad-logo-nav-wrap {
+        margin-top: 5px;
+    }
+    
+    main section.customers .customers-title {
+        width: 80%;
+    }
+    
+    section.header-about {
+        background-position-y: 100%;
+    }
+    
+    form .inline-fields > div, form button[type="submit"] {
+        width: 100%;
+    }
+}

@@ -1,0 +1,391 @@
+2020-01-21 11:25:12.764409 [INFO] [28354] [62.90.210.138:51752] Index file is not available in [/home/memad/public_html/]
+2020-01-21 20:41:39.885866 [INFO] [28354] [31.154.236.84:52970] Index file is not available in [/home/memad/public_html/]
+2020-01-21 20:47:14.749135 [NOTICE] [28354] [31.154.236.84:54296] [STDERR] PHP Fatal error:  Uncaught exception 'yii\base\UserException' with message 'exception 'yii\base\InvalidConfigException' with message 'The directory does not exist: /home/memad/public_html/web/assets' in /home/memad/public_html/vendor/yiisoft/yii2/web/AssetManager.php:213
+Stack trace:
+#0 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#3 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 /home/memad/public_html/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(742): yii\di\ServiceLocator->get('assetManager', true in /home/memad/public_html/components/NlsSoapClient.php on line 44
+2020-01-21 20:47:14.759107 [NOTICE] [28354] [31.154.236.84:54296] [STDERR] PHP Fatal error:  Uncaught exception 'yii\base\InvalidConfigException' with message 'The directory does not exist: /home/memad/public_html/web/assets' in /home/memad/public_html/vendor/yiisoft/yii2/web/AssetManager.php:213
+Stack trace:
+#0 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#3 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 /home/memad/public_html/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(742): yii\di\ServiceLocator->get('assetManager', true)
+#7 /home/memad/public_html/vendor/yiisoft/yii2/ in /home/memad/public_html/vendor/yiisoft/yii2/web/AssetManager.php on line 213
+2020-01-21 20:48:03.002393 [NOTICE] [28354] [31.154.236.84:54512] [STDERR] An Error occurred while handling another error:
+exception 'yii\base\InvalidConfigException' with message 'The directory does not exist: /home/memad/public_html/web/assets' in /home/memad/public_html/vendor/yiisoft/yii2/web/AssetManager.php:213
+Stack trace:
+#0 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#3 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 /home/memad/public_html/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(742): yii\di\ServiceLocator->get('assetManager', true)
+#7 /home/memad/public_html/vendor/yiisoft/yii2/base/Application.php(608): yii\base\Module->get('assetManager')
+#8 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(226): yii\base\Application->getAssetManager()
+#9 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(286): yii\web\View->getAssetManager()
+#10 /home/memad/public_html/vendor/yiisoft/yii2/web/AssetBundle.php(125): yii\web\View->registerAssetBundle('app\\assets\\AppA...')
+#11 /home/memad/public_html/views/layouts/main.php(15): yii\web\AssetBundle::register(Object(yii\web\View))
+#12 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(348): require('/home/memad/pub...')
+#13 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/memad/pub...', Array)
+#14 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(401): yii\base\View->renderFile('/home/memad/pub...', Array, Object(app\controllers\SiteController))
+#15 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(387): yii\base\C
+2020-01-21 20:48:03.002442 [NOTICE] [28354] [31.154.236.84:54512] [STDERR] ontroller->renderContent('<div class="sit...')
+#16 /home/memad/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#17 /home/memad/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#18 [internal function]: yii\web\ErrorAction->run()
+#19 /home/memad/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#20 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#21 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#22 /home/memad/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#23 /home/memad/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\InvalidConfigException))
+#24 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\InvalidConfigException))
+#25 {main}
+Previous exception:
+exception 'ReflectionException' with message 'Class yii\debug\Module does not exist' in /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php:447
+Stack trace:
+#0 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(447): ReflectionClass->__construct('yii\\debug\\Modul...')
+#1 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(374): yii\di\Container->getDependencies('yii\\debug\\Modul...')
+#2 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('yii\\debug\\Modul...', Array, Array)
+#3 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\debug\\Modul...', Array, Array)
+#4 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(427): yii\BaseYii::createObject(Array, Array)
+#5 /home/memad/public_html/vendor/yiisoft/yii2/base/Application.php(315): yii\base\Module->getModule('debug')
+#6 /home/memad/public_html/vendor/yiisoft/yii2/web/Application.php(69): yii\base\A
+2020-01-21 20:48:03.002463 [NOTICE] [28354] [31.154.236.84:54512] [STDERR] pplication->bootstrap()
+#7 /home/memad/public_html/vendor/yiisoft/yii2/base/Application.php(273): yii\web\Application->bootstrap()
+#8 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#9 /home/memad/public_html/vendor/yiisoft/yii2/base/Application.php(206): yii\base\BaseObject->__construct(Array)
+#10 /home/memad/public_html/web/index.php(12): yii\base\Application->__construct(Array)
+#11 {main}
+
+Next exception 'yii\base\InvalidConfigException' with message 'Failed to instantiate component or class "yii\debug\Module".' in /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php:449
+Stack trace:
+#0 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(374): yii\di\Container->getDependencies('yii\\debug\\Modul...')
+#1 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('yii\\debug\\Modul...', Array, Array)
+#2 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\debug\\Modul...', Array, Array)
+#3 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(427): yii\BaseYii::createObject(Array, Array)
+#4 /home/memad/public_html/vendor/yiisoft/yii2/base/Application.php(315): yii\base\Module->getModule('debug')
+#5 /home/memad/public_html/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#6 /home/memad/public_html/vendor/yiisoft/yii2/base/Application.php(273): yii\web\Application->bootstrap()
+#7 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#8 /home/memad/public_html/vendor/yiisoft/yii2/base/Application.php(206): yii\base\BaseObject->__construct(Array)
+#9 /home/memad/public_html/web/index.php(12): yii\base\Application->__construct(Array)
+#10 {main}
+$_SERVER = [
+    'PATH' => '/usr/local/bin:/bin:/usr/bin',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP
+2020-01-21 20:48:03.002481 [NOTICE] [28354] [31.154.236.84:54512] [STDERR] _ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,he;q=0.8',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => '_fbp=fb.1.1574719824631.418127854; _gcl_au=1.1.1122730919.1579266842; _ga=GA1.2.462678638.1579266842',
+    'HTTP_HOST' => 'memad3.hunterhrms.com',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_DNT' => '1',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'DOCUMENT_ROOT' => '/home/memad/public_html',
+    'REMOTE_ADDR' => '31.154.236.84',
+    'REMOTE_PORT' => '54512',
+    'SERVER_ADDR' => '185.147.14.136',
+    'SERVER_NAME' => 'memad3.hunterhrms.com',
+    'SERVER_ADMIN' => '',
+    'SERVER_PORT' => '80',
+    'REQUEST_URI' => '/web/',
+    'SCRIPT_FILENAME' => '/home/memad/public_html/web/index.php',
+    'QUERY_STRING' => '',
+    'SCRIPT_URI' => 'http://memad3.hunterhrms.com/web/',
+    'SCRIPT_URL' => '/web/',
+    'SCRIPT_NAME' => '/web/index.php',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SOFTWARE' => 'LiteSpeed',
+    'REQUEST_METHOD' => 'GET',
+    'X-LSCACHE' => 'on,crawler,esi',
+    'PHP_SELF' => '/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1579636082.963907,
+    'REQUEST_TIME' => 1579636082,
+]
+2020-01-21 20:52:15.319262 [NOTICE] [28354] [31.154.236.84:55526] [STDERR] An Error occurred while handling another error:
+exception 'yii\base\InvalidConfigException' with message 'The directory does not exist: /home/memad/public_html/web/assets' in /home/memad/public_html/vendor/yiisoft/yii2/web/AssetManager.php:213
+Stack trace:
+#0 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#3 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 /home/memad/public_html/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(742): yii\di\ServiceLocator->get('assetManager', true)
+#7 /home/memad/public_html/vendor/yiisoft/yii2/base/Application.php(608): yii\base\Module->get('assetManager')
+#8 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(226): yii\base\Application->getAssetManager()
+#9 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(286): yii\web\View->getAssetManager()
+#10 /home/memad/public_html/vendor/yiisoft/yii2/web/AssetBundle.php(125): yii\web\View->registerAssetBundle('app\\assets\\AppA...')
+#11 /home/memad/public_html/views/layouts/main.php(15): yii\web\AssetBundle::register(Object(yii\web\View))
+#12 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(348): require('/home/memad/pub...')
+#13 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/memad/pub...', Array)
+#14 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(401): yii\base\View->renderFile('/home/memad/pub...', Array, Object(app\controllers\SiteController))
+#15 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(387): yii\base\C
+2020-01-21 20:52:15.319326 [NOTICE] [28354] [31.154.236.84:55526] [STDERR] ontroller->renderContent('<div class="sit...')
+#16 /home/memad/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#17 /home/memad/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#18 [internal function]: yii\web\ErrorAction->run()
+#19 /home/memad/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#20 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#21 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#22 /home/memad/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#23 /home/memad/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\InvalidConfigException))
+#24 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\InvalidConfigException))
+#25 {main}
+Previous exception:
+exception 'yii\base\InvalidConfigException' with message 'The directory does not exist: /home/memad/public_html/web/assets' in /home/memad/public_html/vendor/yiisoft/yii2/web/AssetManager.php:213
+Stack trace:
+#0 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#3 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 /home/memad/public_html/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(742): yii\di\ServiceLocator->get('assetManager', true)
+#7 /hom
+2020-01-21 20:52:15.319345 [NOTICE] [28354] [31.154.236.84:55526] [STDERR] e/memad/public_html/vendor/yiisoft/yii2/base/Application.php(608): yii\base\Module->get('assetManager')
+#8 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(226): yii\base\Application->getAssetManager()
+#9 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(286): yii\web\View->getAssetManager()
+#10 /home/memad/public_html/vendor/yiisoft/yii2/web/AssetBundle.php(125): yii\web\View->registerAssetBundle('app\\widgets\\mem...')
+#11 /home/memad/public_html/widgets/memadSearch/MemadSearchWidget.php(31): yii\web\AssetBundle::register(Object(yii\web\View))
+#12 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): app\widgets\memadSearch\MemadSearchWidget->init()
+#13 [internal function]: yii\base\BaseObject->__construct(Array)
+#14 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#15 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('app\\widgets\\mem...', Array, Array)
+#16 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('app\\widgets\\mem...', Array, Array)
+#17 /home/memad/public_html/vendor/yiisoft/yii2/base/Widget.php(137): yii\BaseYii::createObject(Array)
+#18 /home/memad/public_html/views/site/sections/header.php(21): yii\base\Widget::widget(Array)
+#19 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(348): require('/home/memad/pub...')
+#20 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/memad/pub...', Array)
+#21 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/memad/pub...', Array, NULL)
+#22 /home/memad/public_html/views/site/index.php(12): yii\base\View->render('sections/header', Array)
+#23 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(348): require('/home/memad/pub...')
+#24 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/memad/pub...', Array)
+#25 /home/memad/public_html/vendor/yiisoft/yi
+2020-01-21 20:52:15.319366 [NOTICE] [28354] [31.154.236.84:55526] [STDERR] i2/base/View.php(156): yii\base\View->renderFile('/home/memad/pub...', Array, Object(app\controllers\SiteController))
+#26 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('index', Array, Object(app\controllers\SiteController))
+#27 /home/memad/public_html/controllers/SiteController.php(74): yii\base\Controller->render('index')
+#28 [internal function]: app\controllers\SiteController->actionIndex()
+#29 /home/memad/public_html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#30 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#31 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#32 /home/memad/public_html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#33 /home/memad/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#34 /home/memad/public_html/web/index.php(12): yii\base\Application->run()
+#35 {main}
+$_SERVER = [
+    'PATH' => '/usr/local/bin:/bin:/usr/bin',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,he;q=0.8',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => '_fbp=fb.1.1574719824631.418127854; _gcl_au=1.1.1122730919.1579266842; _ga=GA1.2.462678638.1579266842',
+    'HTTP_HOST' => 'memad3.hunterhrms.com',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_DNT' => '1',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'DOCUMENT_ROOT' => '/home/memad/public_html',
+    'REMOTE_ADDR' => '31.154.236.84',
+    'REMOTE_PORT' => '55526',
+    'SERVER_ADDR' => '185.147.14.1
+2020-01-21 20:52:17.604401 [NOTICE] [28354] [31.154.236.84:55526-1#memad:lsapi] [STDERR] An Error occurred while handling another error:
+exception 'yii\base\InvalidConfigException' with message 'The directory does not exist: /home/memad/public_html/web/assets' in /home/memad/public_html/vendor/yiisoft/yii2/web/AssetManager.php:213
+Stack trace:
+#0 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#3 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 /home/memad/public_html/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(742): yii\di\ServiceLocator->get('assetManager', true)
+#7 /home/memad/public_html/vendor/yiisoft/yii2/base/Application.php(608): yii\base\Module->get('assetManager')
+#8 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(226): yii\base\Application->getAssetManager()
+#9 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(286): yii\web\View->getAssetManager()
+#10 /home/memad/public_html/vendor/yiisoft/yii2/web/AssetBundle.php(125): yii\web\View->registerAssetBundle('app\\assets\\AppA...')
+#11 /home/memad/public_html/views/layouts/main.php(15): yii\web\AssetBundle::register(Object(yii\web\View))
+#12 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(348): require('/home/memad/pub...')
+#13 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/memad/pub...', Array)
+#14 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(401): yii\base\View->renderFile('/home/memad/pub...', Array, Object(app\controllers\SiteController))
+#15 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(387): yii\base\C
+2020-01-21 20:52:17.604463 [NOTICE] [28354] [31.154.236.84:55526-1#memad:lsapi] [STDERR] ontroller->renderContent('<div class="sit...')
+#16 /home/memad/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#17 /home/memad/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#18 [internal function]: yii\web\ErrorAction->run()
+#19 /home/memad/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#20 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#21 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#22 /home/memad/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#23 /home/memad/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\InvalidConfigException))
+#24 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\InvalidConfigException))
+#25 {main}
+Previous exception:
+exception 'yii\base\InvalidConfigException' with message 'The directory does not exist: /home/memad/public_html/web/assets' in /home/memad/public_html/vendor/yiisoft/yii2/web/AssetManager.php:213
+Stack trace:
+#0 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#3 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 /home/memad/public_html/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(742): yii\di\ServiceLocator->get('assetManager', true)
+#7 /hom
+2020-01-21 20:52:17.604483 [NOTICE] [28354] [31.154.236.84:55526-1#memad:lsapi] [STDERR] e/memad/public_html/vendor/yiisoft/yii2/base/Application.php(608): yii\base\Module->get('assetManager')
+#8 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(226): yii\base\Application->getAssetManager()
+#9 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(286): yii\web\View->getAssetManager()
+#10 /home/memad/public_html/vendor/yiisoft/yii2/web/AssetBundle.php(125): yii\web\View->registerAssetBundle('app\\widgets\\mem...')
+#11 /home/memad/public_html/widgets/memadSearch/MemadSearchWidget.php(31): yii\web\AssetBundle::register(Object(yii\web\View))
+#12 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): app\widgets\memadSearch\MemadSearchWidget->init()
+#13 [internal function]: yii\base\BaseObject->__construct(Array)
+#14 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#15 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('app\\widgets\\mem...', Array, Array)
+#16 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('app\\widgets\\mem...', Array, Array)
+#17 /home/memad/public_html/vendor/yiisoft/yii2/base/Widget.php(137): yii\BaseYii::createObject(Array)
+#18 /home/memad/public_html/views/site/sections/header.php(21): yii\base\Widget::widget(Array)
+#19 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(348): require('/home/memad/pub...')
+#20 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/memad/pub...', Array)
+#21 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/memad/pub...', Array, NULL)
+#22 /home/memad/public_html/views/site/index.php(12): yii\base\View->render('sections/header', Array)
+#23 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(348): require('/home/memad/pub...')
+#24 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/memad/pub...', Array)
+#25 /home/memad/public_html/vendor/yiisoft/yi
+2020-01-21 20:52:17.604526 [NOTICE] [28354] [31.154.236.84:55526-1#memad:lsapi] [STDERR] i2/base/View.php(156): yii\base\View->renderFile('/home/memad/pub...', Array, Object(app\controllers\SiteController))
+#26 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('index', Array, Object(app\controllers\SiteController))
+#27 /home/memad/public_html/controllers/SiteController.php(74): yii\base\Controller->render('index')
+#28 [internal function]: app\controllers\SiteController->actionIndex()
+#29 /home/memad/public_html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#30 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#31 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#32 /home/memad/public_html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#33 /home/memad/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#34 /home/memad/public_html/web/index.php(12): yii\base\Application->run()
+#35 {main}
+$_SERVER = [
+    'PATH' => '/usr/local/bin:/bin:/usr/bin',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,he;q=0.8',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => '_fbp=fb.1.1574719824631.418127854; _gcl_au=1.1.1122730919.1579266842; _ga=GA1.2.462678638.1579266842',
+    'HTTP_HOST' => 'memad3.hunterhrms.com',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_DNT' => '1',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'DOCUMENT_ROOT' => '/home/memad/public_html',
+    'REMOTE_ADDR' => '31.154.236.84',
+    'REMOTE_PORT' => '55526',
+    'SERVER_ADDR' => '185.147.14.1
+2020-01-21 20:52:42.951260 [NOTICE] [28354] [31.154.236.84:55635] [STDERR] An Error occurred while handling another error:
+exception 'yii\base\InvalidConfigException' with message 'The directory does not exist: /home/memad/public_html/web/assets' in /home/memad/public_html/vendor/yiisoft/yii2/web/AssetManager.php:213
+Stack trace:
+#0 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#3 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 /home/memad/public_html/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(742): yii\di\ServiceLocator->get('assetManager', true)
+#7 /home/memad/public_html/vendor/yiisoft/yii2/base/Application.php(608): yii\base\Module->get('assetManager')
+#8 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(226): yii\base\Application->getAssetManager()
+#9 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(286): yii\web\View->getAssetManager()
+#10 /home/memad/public_html/vendor/yiisoft/yii2/web/AssetBundle.php(125): yii\web\View->registerAssetBundle('app\\assets\\AppA...')
+#11 /home/memad/public_html/views/layouts/main.php(15): yii\web\AssetBundle::register(Object(yii\web\View))
+#12 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(348): require('/home/memad/pub...')
+#13 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/memad/pub...', Array)
+#14 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(401): yii\base\View->renderFile('/home/memad/pub...', Array, Object(app\controllers\SiteController))
+#15 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(387): yii\base\C
+2020-01-21 20:52:42.951320 [NOTICE] [28354] [31.154.236.84:55635] [STDERR] ontroller->renderContent('<div class="sit...')
+#16 /home/memad/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#17 /home/memad/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#18 [internal function]: yii\web\ErrorAction->run()
+#19 /home/memad/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#20 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#21 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#22 /home/memad/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#23 /home/memad/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\base\InvalidConfigException))
+#24 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\InvalidConfigException))
+#25 {main}
+Previous exception:
+exception 'yii\base\InvalidConfigException' with message 'The directory does not exist: /home/memad/public_html/web/assets' in /home/memad/public_html/vendor/yiisoft/yii2/web/AssetManager.php:213
+Stack trace:
+#0 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\BaseObject->__construct(Array)
+#2 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#3 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 /home/memad/public_html/vendor/yiisoft/yii2/di/ServiceLocator.php(137): yii\BaseYii::createObject(Array)
+#6 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(742): yii\di\ServiceLocator->get('assetManager', true)
+#7 /hom
+2020-01-21 20:52:42.951338 [NOTICE] [28354] [31.154.236.84:55635] [STDERR] e/memad/public_html/vendor/yiisoft/yii2/base/Application.php(608): yii\base\Module->get('assetManager')
+#8 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(226): yii\base\Application->getAssetManager()
+#9 /home/memad/public_html/vendor/yiisoft/yii2/web/View.php(286): yii\web\View->getAssetManager()
+#10 /home/memad/public_html/vendor/yiisoft/yii2/web/AssetBundle.php(125): yii\web\View->registerAssetBundle('app\\widgets\\mem...')
+#11 /home/memad/public_html/widgets/memadSearch/MemadSearchWidget.php(31): yii\web\AssetBundle::register(Object(yii\web\View))
+#12 /home/memad/public_html/vendor/yiisoft/yii2/base/BaseObject.php(109): app\widgets\memadSearch\MemadSearchWidget->init()
+#13 [internal function]: yii\base\BaseObject->__construct(Array)
+#14 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(400): ReflectionClass->newInstanceArgs(Array)
+#15 /home/memad/public_html/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('app\\widgets\\mem...', Array, Array)
+#16 /home/memad/public_html/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('app\\widgets\\mem...', Array, Array)
+#17 /home/memad/public_html/vendor/yiisoft/yii2/base/Widget.php(137): yii\BaseYii::createObject(Array)
+#18 /home/memad/public_html/views/site/sections/header.php(21): yii\base\Widget::widget(Array)
+#19 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(348): require('/home/memad/pub...')
+#20 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/memad/pub...', Array)
+#21 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/memad/pub...', Array, NULL)
+#22 /home/memad/public_html/views/site/index.php(12): yii\base\View->render('sections/header', Array)
+#23 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(348): require('/home/memad/pub...')
+#24 /home/memad/public_html/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/memad/pub...', Array)
+#25 /home/memad/public_html/vendor/yiisoft/yi
+2020-01-21 20:52:42.951357 [NOTICE] [28354] [31.154.236.84:55635] [STDERR] i2/base/View.php(156): yii\base\View->renderFile('/home/memad/pub...', Array, Object(app\controllers\SiteController))
+#26 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('index', Array, Object(app\controllers\SiteController))
+#27 /home/memad/public_html/controllers/SiteController.php(74): yii\base\Controller->render('index')
+#28 [internal function]: app\controllers\SiteController->actionIndex()
+#29 /home/memad/public_html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#30 /home/memad/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#31 /home/memad/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#32 /home/memad/public_html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#33 /home/memad/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#34 /home/memad/public_html/web/index.php(12): yii\base\Application->run()
+#35 {main}
+$_SERVER = [
+    'PATH' => '/usr/local/bin:/bin:/usr/bin',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,he;q=0.8',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => '_fbp=fb.1.1574719824631.418127854; _gcl_au=1.1.1122730919.1579266842; _ga=GA1.2.462678638.1579266842',
+    'HTTP_HOST' => 'memad3.hunterhrms.com',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_DNT' => '1',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'DOCUMENT_ROOT' => '/home/memad/public_html',
+    'REMOTE_ADDR' => '31.154.236.84',
+    'REMOTE_PORT' => '55635',
+    'SERVER_ADDR' => '185.147.14.1
+2020-01-21 21:01:18.277123 [INFO] [28354] [31.154.236.84:57731] File not found [/home/memad/public_html/site/apply] 
+2020-01-21 21:01:18.281627 [INFO] [28354] [31.154.236.84:57732] File not found [/home/memad/public_html/images/loader.gif] 
+2020-01-21 21:01:44.394264 [INFO] [28354] [31.154.236.84:57839] File not found [/home/memad/public_html/site/apply] 
+2020-01-21 21:04:50.144352 [INFO] [28354] [31.154.236.84:58605] File not found [/home/memad/public_html/site/apply] 
+2020-01-21 21:10:29.134464 [INFO] [28354] [31.154.236.84:59960] File not found [/home/memad/public_html/site/apply] 
+2020-01-21 21:11:06.901924 [INFO] [28354] [31.154.236.84:60149] File not found [/home/memad/public_html/site/apply] 
+2020-01-21 21:11:16.877837 [INFO] [28354] [31.154.236.84:60190] File not found [/home/memad/public_html/apply] 
+2020-01-21 21:11:27.619394 [INFO] [28354] [31.154.236.84:60235] File not found [/home/memad/public_html/contact] 
+2020-01-21 21:11:34.307193 [INFO] [28354] [31.154.236.84:60260] File not found [/home/memad/public_html/site/contact] 
+2020-01-21 21:12:45.571827 [INFO] [28354] [31.154.236.84:60526] File not found [/home/memad/public_html/site/about] 
+2020-01-21 21:12:50.874987 [INFO] [28354] [31.154.236.84:60526-3#memad] File not found [/home/memad/public_html/about] 
+2020-01-21 21:13:01.657620 [INFO] [28354] [31.154.236.84:60611] File not found [/home/memad/public_html/web/site/about] 
+2020-01-21 21:13:08.048225 [INFO] [28354] [31.154.236.84:60640] File not found [/home/memad/public_html/web/about] 
+2020-01-21 21:48:59.869240 [NOTICE] [28354] [31.154.236.84:52764] [STDERR] PHP Parse error:  syntax error, unexpected ':', expecting ';' or '{' in /home/memad/models/LoginForm.php on line 56
+2020-01-21 21:50:13.951155 [NOTICE] [28354] [31.154.236.84:53064] [STDERR] PHP Parse error:  syntax error, unexpected ':', expecting ';' or '{' in /home/memad/models/LoginForm.php on line 56

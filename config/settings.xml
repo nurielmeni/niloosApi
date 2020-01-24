@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <fromMail>nurielme@gmail.com</fromMail>
+    <toMail>nurielme@gmail.com</toMail>
+    <fromName>NilooSoft</fromName>
+    <nsoftSiteId>1bec8d3d-0072-42d4-b591-d3307172ee22</nsoftSiteId>
+    <nsoftApplicationId>1bec8d3d-0072-42d4-b591-d3307172ee22</nsoftApplicationId>
+    <categorySupplierId>c30b69a4-594a-49da-b78a-ce4c961597db</categorySupplierId>
+    <nlsCardsWsdlUrl>https://huntercards.hunterhrms.com/HunterCards.svc?wsdl</nlsCardsWsdlUrl>
+    <nlsSecurityWsdlUrl>https://hunterdirectory.hunterhrms.com/SecurityService.svc?wsdl</nlsSecurityWsdlUrl>
+    <nlsDirectoryWsdlUrl>https://hunterdirectory.hunterhrms.com/DirectoryManagementService.svc?wsdl</nlsDirectoryWsdlUrl>
+    <nlsSecurityDomain>memad3</nlsSecurityDomain>
+    <nlsSecurityUsername>JobsSite</nlsSecurityUsername>
+    <nlsSecurityPassword>Pass2019</nlsSecurityPassword>
+    <searchServiceWsdlUrl>https://huntercards.hunterhrms.com/HunterCards.svc?wsdl</searchServiceWsdlUrl>
+    <languageCode>1033</languageCode>
+    <categoryIDs/>
+    <trace>1</trace>
+    <exceptions>1</exceptions>
+    <cacheWsdl>3</cacheWsdl>
+    <siteAddress>https://elbit.co.il/</siteAddress>
+</root>

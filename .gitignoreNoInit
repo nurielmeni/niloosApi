@@ -1,0 +1,9 @@
+/runtime/
+/vendor/
+/web/assets/
+/public_html/assets/
+/public_html/index.php
+/vagrant/
+/nbproject/private/
+/web/index.php
+/config/db.php

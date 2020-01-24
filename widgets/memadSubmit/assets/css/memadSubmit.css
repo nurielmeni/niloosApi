@@ -1,0 +1,86 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 2, 2019, 12:14:26 AM
+    Author     : Nurielmeni
+*/
+#ajax-form-modal .modal-content {
+    border-radius: 24px;
+    width: 586px;
+}
+
+#ajax-form-modal .ajax-form-modal-wrapper header {
+    height: 160px;
+    background: url('../images/ajax-modal-form.jpg') no-repeat center center;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+#ajax-form-modal .modal-content form h1 {
+    font-weight: 200;
+    font-size: 36px;
+}
+
+#ajax-form-modal .modal-content form .form-group.field-applyform-cvfile {
+    text-align: center;
+}
+
+#ajax-form-modal .modal-content form .drag-file-area {
+    margin: 0 32px 20px;
+    box-sizing: border-box;
+    border: 2px dashed #81f3ff;
+    border-radius: 16px;
+    padding: 80px 0;
+}
+
+#ajax-form-modal .modal-content form .drag-file-area img {
+    margin: 0 10px;
+}
+
+#ajax-form-modal .modal-content form .select-file  label span {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #24d2ff;
+}
+
+#ajax-form-modal .modal-content form .select-file label {
+    font-size: 20px;
+    color: #004374;
+}
+
+#ajax-form-modal .modal-content form button {
+    margin-bottom: 20px;
+}
+
+/******* Thanks *******/
+.ajax-thanks-modal-wrapper h1 {
+    font-weight: 200;
+    margin-bottom: 26px;
+}
+
+.ajax-thanks-modal-wrapper p {
+    margin-bottom: 0;
+}
+
+.ajax-thanks-modal-wrapper .first,
+.ajax-thanks-modal-wrapper .second,
+.ajax-thanks-modal-wrapper .btn {
+    margin-bottom: 26px;
+    font-size: 20px;
+}
+
+.ajax-thanks-modal-wrapper header {
+    background: url('../images/ajax-modal-thanks.jpg') no-repeat center center;
+    height: 160px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+@media (max-width: 580px) {
+    #ajax-form-modal .modal-content {
+        width: auto;
+    }
+}
