@@ -1,0 +1,144 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 24, 2020, 6:55:29 PM
+    Author     : meni
+*/
+
+.text-light {
+    font-weight: 200;
+}
+
+.no-margin { 
+    margin: 0; 
+}
+
+.no-padding { 
+    padding: 0 ;
+}
+
+.fg-light-blue {
+    color: #81f3ff;
+}
+
+.fg-blue {
+    color: #004374;
+}
+
+.bg-blue {
+    background-color: #004374;
+}
+
+.fg-white {
+    color: #ffffff;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.bg-gradiant {
+    background-image: linear-gradient(to right, #00c0ff 0%, #88ffff 100%);
+}
+
+.circle-button {
+    border-radius: 50%;
+}
+
+.btn.memad3 {
+    border-radius: 100px;
+    text-align: center;
+    padding: 0 30px;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.btn.memad3.blue {
+    color: #ffffff;
+    background-color: #004374;
+}
+
+.btn.memad3.white {
+    color: #004374;
+    background-color: #ffffff;
+}
+
+.btn.memad3.gradiant {
+    background-image: linear-gradient(to bottom, #81f3ff, #24d2ff);
+    box-shadow: 0 3px 0 0;
+}
+
+.btn.memad3.trans {
+    background-color: transparent;
+    border: solid 1px;
+}
+
+.btn.memad3.trans:hover {
+    background-color: #fff;
+    color: #004374;
+}
+
+.btn.md.memad3 {
+    height: 56px;
+    
+}
+
+.btn.sm.memad3 {
+    height: 46px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.space-around {
+    justify-content: space-around;
+}
+
+.flex.row {
+    flex-direction: row;
+}
+
+.flex.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex.column {
+    flex-direction: column;
+}
+
+.flex.center {
+    justify-content: center;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.flex.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex.flex-rwrap {
+    flex-wrap: wrap-reverse;
+}
+
+@media (max-width: 767px) {
+    div.wrap.site-about .visible-xs.memad-logo-nav-wrap {
+        color: #fff;
+    }
+    
+    .visible-xs.memad-logo-nav-wrap {
+        display: flex !important;
+        position: absolute;
+        top: 12px;
+        right: 4px;
+    }
+}
