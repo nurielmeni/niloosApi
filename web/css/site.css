@@ -88,7 +88,6 @@ section.header .actions > a {
 }
 
 main section.about {
-    min-height: 60vw;
     background: linear-gradient(0deg, rgba(1, 53, 92, 0.7), rgba(1, 53, 92, 0.7)), url(../images/about-bg.jpg) no-repeat center center;
     background-size: cover;
 }
@@ -213,6 +212,7 @@ a.desc:after {
 section.about .row {
     max-width: 800px;
     padding-top: 84px;
+    padding-bottom: 84px;
     margin: 0 auto;
     color: #fff;
     font-size: 20px;
