@@ -66,6 +66,10 @@ and open the template in the editor.
     background-color: #ffffff;
 }
 
+.btn.memad3.light-blue {
+    background-color: rgba(129, 243, 255, 0.56);
+}
+
 .btn.memad3.gradiant {
     background-image: linear-gradient(to bottom, #81f3ff, #24d2ff);
     box-shadow: 0 3px 0 0;

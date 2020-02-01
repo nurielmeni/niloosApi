@@ -83,8 +83,8 @@ section.header .actions {
     margin-top: 7.5vw;
 }
 
-section.header .actions > a {
-    margin: 10px;
+section.header .actions p > a {
+    margin-left: 10px;
 }
 
 main section.about {

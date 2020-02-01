@@ -19,6 +19,7 @@ class SearchForm extends Model
     public $location;
     public $profession;
     public $suplierId;
+    public $freetext;
     
     private $niloos;
     private $settings;
@@ -28,6 +29,7 @@ class SearchForm extends Model
         $this->settings = new \app\components\Settings();
         $this->settings = $this->settings->getSettings();
         $this->niloos = new Niloos();
+        $this->freetext = '';
     }
     
     /**
@@ -37,7 +39,7 @@ class SearchForm extends Model
     {
         return [
             // location, profession are required
-            [['location', 'profession'], 'safe'],
+            [['location', 'profession', 'freetext'], 'safe'],
         ];
     }
 
@@ -49,6 +51,7 @@ class SearchForm extends Model
         return [
             'location' => 'בחר מיקום',
             'profession' => 'בחר מקצוע',
+            'freetext' => 'טקסט חופשי',
         ];
     }
 
@@ -85,8 +88,7 @@ class SearchForm extends Model
             // TODO Add the search logic
             $categories = is_array($this->profession) ? $this->profession : [$this->profession];
             $locations = is_array($this->location) ? $this->location : [$this->location];
-            $result = $this->jobsByCategories($categories, $locations);
-            return $result;
+            return !empty($this->freetext) ? $this->jobsByFreeText($this->freetext) : $this->jobsByCategories($categories, $locations);
         }
         return false;
     }
@@ -204,4 +206,94 @@ class SearchForm extends Model
         $cacheKey = $this->settings['categorySupplierId'] . implode('', $categories);
         return $this->niloos->jobsGetByFilter($filter, $cacheKey);
     }
+    
+    public function jobsByFreeText($freetext = '') {
+        if (empty($freetext)) return [];
+        $freetext = preg_split('/[\s,]+/', $freetext);
+        /**
+         * Object type of search
+         *
+            $filter = new stdClass();
+            $filter->jobFilter = new stdClass();
+            $filter->jobFilter->FromView = "Jobs";
+            $filter->jobFilter->NumberOfRows = 10000;
+            $filter->jobFilter->OffsetIndex = 0;
+
+            $filter->jobFilter->SelectFilterFields = new stdClass();
+            $filter->jobFilter->SelectFilterFields->JobFilterFields = ['JobId, JobTitle'];
+            $filter->jobFilter->WhereFilters->JobFilterWhere[] = $this->addWhereFilter('OR', 'CategoryId', 'Exact', $categories);
+            $filter->jobFilter->WhereFilters->JobFilterWhere[] = $this->addWhereFilter('AND', 'SupplierId', 'Exact', $this->supplierId);
+            $filter->jobFilter->OrderByFilterSort = new stdClass();
+
+            $JobFilterSort = new stdClass();
+            $JobFilterSort->Field = 'JobTitle';
+            $JobFilterSort->Direction = 'Ascending';
+
+            $filter->jobFilter->OrderByFilterSort->JobFilterSort = [$JobFilterSort];
+
+            $filter->transactionCode = Helper::newGuid();
+            $filter->LanguageId = self::LANG_HEB;
+         * 
+         * End of object
+        **/
+            
+        $filter = [
+            'transactionCode' => Helper::newGuid(),
+            'LanguageId' => self::LANG_HEB,
+            'jobFilter' => [
+                'FromView' => 'Jobs',
+                'NumberOfRows' => 10000,
+                'OffsetIndex' => 0,
+                'SelectFilterFields' => [
+                    'JobFilterFields' => [
+                        'CityId', 
+//                        'CountryCodeFIPS', 
+                        'Description', 
+                        'JobId', 
+//                        'JobSeniority', 
+                        'JobTitle', 
+                        'JobCode',
+//                        'OpenDate',
+//                        'CategoryId',
+//                        'OpenPositions', 
+//                        'Rank', 
+                        'RegionValue', 
+                        'Requiremets', 
+//                        'Skills', 
+//                        'YearsOfExperience',
+//                        'EmployerName',
+//                        'JobScope',
+//                        'EmployerId',
+                        'RegionText',
+//                        'EmploymentType',
+                        'UpdateDate',
+//                        'ExpertiseId',
+//                        'ProfessionalFieldId'
+                    ],
+                ],
+                'OrderByFilterSort' => [
+                    'JobFilterSort' => [
+                        [
+                            'Field' => 'JobTitle',
+                            'Direction' => 'Ascending',
+                        ],
+                    ],
+                ],
+                'WhereFilters' => [
+                    'JobFilterWhere' => [
+                        //$this->addWhereFilter('OR', 'Description', 'Like', $freetext),
+                        $this->addWhereFilter('OR', 'JobTitle', 'Like', $freetext),
+                        //$this->addWhereFilter('OR', 'JobId', 'Exact', $freetext),
+                        $this->addWhereFilter('AND', 'SupplierId', 'Exact', $this->settings['categorySupplierId']),
+                    ],
+                ],
+            ]
+        ];
+//                        print '<pre style="direction:ltr;"><code>';
+//                        print_r($filter);
+//                        print '</code></pre>';
+        $cacheKey =  'free' . hash('md5', $this->freetext);
+        return $this->niloos->jobsGetByFilter($filter, $cacheKey);
+    }
+
 }
