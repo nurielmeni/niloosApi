@@ -99,7 +99,7 @@ main section.customers {
 }
 
 .memad-section-title {
-    width: 400px;
+    max-width: 400px;
     margin: 50px auto;
     border-bottom: 1px solid #81f3ff;
     line-height: 30px;
