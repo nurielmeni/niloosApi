@@ -433,6 +433,12 @@ main .site-jobs .memad-search-wrapper {
         padding: 0;
     }
     
+    
+    nav.navbar .navbar-header {
+        margin: 0;
+        padding: 0;
+    }
+    
     .navbar-collapse.collapse.in {
         background-color: rgba(0, 42, 74, 0.95);
         text-align: center;
