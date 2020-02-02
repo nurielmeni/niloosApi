@@ -6,7 +6,7 @@ return [
     'senderEmail' => 'memad3@cvwebmail.com',
     'senderName' => 'Memad-3 Jobs',
     'cvWebMail' => 'memad3@cvwebmail.com',
-    'memadIn' => '',
-    'memadFb' => '',
+    'memadIn' => 'https://www.linkedin.com/company/memad-3/?viewAsMember=true',
+    'memadFb' => 'https://www.facebook.com/Memad3Jobs/',
     'flushCache' => false,
 ];
