@@ -437,6 +437,7 @@ main .site-jobs .memad-search-wrapper {
     nav.navbar .navbar-header {
         margin: 0;
         padding: 0;
+        float: none;
     }
     
     .navbar-collapse.collapse.in {
