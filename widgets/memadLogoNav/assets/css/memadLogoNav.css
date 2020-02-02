@@ -10,7 +10,8 @@ and open the template in the editor.
 div.memad-logo-nav-wrap {
     display: flex;
     justify-content: space-between;
-    width: 230px;;
+    width: 230px;
+    z-index: 10;
 }
 
 div.memad-logo-nav-wrap > div.bg > img {
