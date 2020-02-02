@@ -37,8 +37,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="left">
                 <div class="map"></div>
                 <div class="flex space-around flex-wrap">
-                    <span>מייל talya@memad3.com</span>
-                    <span>טלפון 054-6868011 | 072-2201112</span>
+                    <span>מייל office@memad3.com</span>
+                    <span>טלפון  072-2201111</span>
                 </div>
             </div>
             <div class="right">
