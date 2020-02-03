@@ -10,3 +10,4 @@
 .cache
 composer.phar
 composer.lock
+/nbproject/
