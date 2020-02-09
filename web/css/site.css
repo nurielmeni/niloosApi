@@ -455,7 +455,7 @@ main .site-jobs .memad-search-wrapper {
     }
     
     .navbar-collapse.collapse.in {
-        background-color: rgba(0, 42, 74, 0.95);
+        background-color: #002a4a;
         text-align: center;
         margin: 0;
         width: 100%;
