@@ -438,7 +438,7 @@ main .site-jobs .memad-search-wrapper {
     
     main section.header .memad-search-wrapper {
         background-color: #2a5d87;
-        position: absolute;
+        position: absolute !important
         margin-bottom: -80px;    
     }
 }
