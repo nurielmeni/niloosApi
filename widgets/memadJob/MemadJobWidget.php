@@ -12,7 +12,7 @@ use app\widgets\memadJob\assets\MemadJobAsset;
 class MemadJobWidget extends Widget {
 
     public $wrapClass;
-    public $direction = 'ltr';
+    public $direction = '';
     public $jobUrl;
     public $showHeaders = false;
     public $job = [];
