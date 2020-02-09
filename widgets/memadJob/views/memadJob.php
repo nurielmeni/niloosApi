@@ -33,7 +33,7 @@ use yii\helpers\Url;
             </div>
         </div>
 
-        <div class="panel-footer">     
+        <div class="panel-footer" dir="ltr">     
             <div class="actions flex space-between">
                 <button 
                     id="apply-job-<?= Helper::arrayStrVal($job, 'JobId') ?>"
