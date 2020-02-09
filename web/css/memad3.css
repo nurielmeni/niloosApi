@@ -146,4 +146,8 @@ and open the template in the editor.
         right: 4px;
         z-index: 2000;
     }
+    
+    div.memad-logo-nav-wrap > div.memad-logo-nav {
+        color: #004374 !important;
+    }
 }
