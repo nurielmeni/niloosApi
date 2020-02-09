@@ -28,7 +28,6 @@ use app\widgets\customSelect\CustomSelectWidget;
     <?php endif; ?>
 
         <?= $form->field($model, 'location', ['options' => ['class' =>  $inline ? 'form-group flex' : 'form-group']])->dropDownList($model->locationOptions, [
-            'autofocus' => true, 
             'prompt' => $model->getAttributeLabel('location'),
             'class' => 'nice-select',
         ])->label($intro) ?>
