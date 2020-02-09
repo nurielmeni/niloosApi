@@ -447,14 +447,11 @@ main .site-jobs .memad-search-wrapper {
     nav .container {
         padding: 0;
     }
-    
-    
+  
     nav.navbar .navbar-header {
         margin: 0;
         padding: 0;
         float: none;
-        background-color: #fff;
-        color: #004374;
     }
     
     .navbar-collapse.collapse.in {
