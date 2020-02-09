@@ -41,7 +41,8 @@ and open the template in the editor.
 
 .memad-employee-wrapper .panel-body .description {
     color: #888888;
-    overflow: scroll;
+    overflow: auto;
+    overflow-x: hidden;
     text-overflow: ellipsis;
     max-height: 100px;
 }
