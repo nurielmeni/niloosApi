@@ -150,4 +150,10 @@ and open the template in the editor.
     div.memad-logo-nav-wrap > div.memad-logo-nav {
         color: #004374 !important;
     }
+    
+    nav > .container > .navbar-header {
+        background-color: #fff;
+        color: #004374;
+    }
+
 }
