@@ -144,5 +144,6 @@ and open the template in the editor.
         position: absolute;
         top: 12px;
         right: 4px;
+        z-index: 2000;
     }
 }
