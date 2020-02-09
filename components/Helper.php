@@ -21,7 +21,7 @@ class Helper {
     
     public static function arrayStrVal($arr, $prop, $default = '') {
         if (is_array($arr) && key_exists($prop, $arr))
-                return $arr[$prop];
+                return is_array($arr[$prop]) ? implode(',', $arr[$prop]) : $arr[$prop];
         return $default;
     }
 

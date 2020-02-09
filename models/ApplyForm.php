@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use Yii;
 use yii\base\Model;
 use yii\web\UploadedFile;
 
@@ -27,19 +28,19 @@ class ApplyForm extends Model
     {
         if ($this->validate()) {
             $this->cvFileUrl = 'uploads/cvFiles/' . $this->cvFile->baseName . '.' . $this->cvFile->extension;
-            $this->cvFile->saveAs($this->cvFileUrl);
+            $this->cvFile->saveAs($this->cvFileUrl, false);
             return true;
         } else {
             return false;
         }
     }
     
-    public function sendMail() {
+    public function sendMail($email) {
         $subject = "התקבלה מועמדות למשרה - $this->jobTitle - מזהה משרה - $this->jobId";
         if ($this->validate()) {
-            Yii::$app->mailer->compose()
+            \Yii::$app->mailer->compose()
                 ->setTo($email)
-                ->setFrom([Yii::$app->params['senderEmail'] => Yii::$app->params['senderName']])
+                ->setFrom([\Yii::$app->params['senderEmail'] => \Yii::$app->params['senderName']])
                 ->setSubject($subject)
                 ->setTextBody($subject)
                 ->attach($this->cvFileUrl)
