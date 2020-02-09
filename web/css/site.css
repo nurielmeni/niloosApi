@@ -428,6 +428,21 @@ main .site-jobs .memad-search-wrapper {
     }
 }
 
+@media(max-width:880px) {
+    main section.header {
+        min-height: 620px;
+        background: url('../images/surfer.jpg') no-repeat center center;
+        background-size: 100% 390px;
+        position: relative;
+    }    
+    
+    main section.header .memad-search-wrapper {
+        background-color: #2a5d87;
+        position: absolute;
+        margin-bottom: -80px;    
+    }
+}
+
 @media(max-width:767px) {
     nav .container {
         padding: 0;
@@ -476,19 +491,6 @@ main .site-jobs .memad-search-wrapper {
     }
     footer .links.flex.space-around {
         justify-content: center;
-    }
-    
-    main section.header {
-        min-height: 620px;
-        background: url('../images/surfer.jpg') no-repeat center center;
-        background-size: 100% 390px;
-        position: relative;
-    }    
-    
-    main section.header .memad-search-wrapper {
-        background-color: #2a5d87;
-        position: absolute;
-        margin-bottom: -80px;    
     }
 }
 
