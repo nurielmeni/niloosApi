@@ -10,7 +10,7 @@ use app\widgets\socialShare\SocialShare;
 use yii\helpers\Url;
 
 ?>
-<div class="memad-job-wrapper <?= 'job-' . Helper::arrayStrVal($job, 'JobId') ?> <?= $wrapClass ?>" dir="<?= $direction ?>">
+<div class="memad-job-wrapper <?= 'job-' . Helper::arrayStrVal($job, 'JobId') ?> <?= $wrapClass ?>" <?= strlen($direction) > 0 ? 'dir="'.$direction.'"' : '' ?>>
     <div class="panel panel-default">
         
         <div class="panel-heading">
