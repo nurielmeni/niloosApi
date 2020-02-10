@@ -25,7 +25,7 @@ class SlickCarousel extends \yii\bootstrap\Widget
         ]);      
         if ($folderFiles && is_array($folderFiles)) {
             foreach ($folderFiles as $logo) {
-                array_push($this->items, ['img' => str_replace ( $this->folder , '' , $logo), 'alt' => 'Customer Logo']);
+                array_push($this->items, ['img' => str_replace ( 'public_html/' , '' , $logo), 'alt' => 'Customer Logo']);
             }
         }
         
