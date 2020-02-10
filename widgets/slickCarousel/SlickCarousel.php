@@ -14,10 +14,15 @@ class SlickCarousel extends \yii\bootstrap\Widget
      * 
      */
     public $items = [];
+    public $folder;
     public $wrapClass;
 
     public function init() {
         parent::init();
+        $folderFiles = \yii\helpers\FileHelper::findFiles($this->folder,[
+            'except' => ['*.png','*.jpg'],
+            'recursive' => false,
+        ]);           
         $this->wrapClass .= strpos($this->wrapClass, 'meni-carousel') !== false ?: ' meni-carousel';
         $this->items = is_array($this->items) ? $this->items : [];
         SlickCarouselAsset::register(\Yii::$app->view);
