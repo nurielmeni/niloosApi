@@ -19,5 +19,5 @@ $items = [
 
 echo \app\widgets\slickCarousel\SlickCarousel::widget([
     'items' => $items,
-    'folder' => \Yii::$app->basePath . ('/public_html/uploads/customers/'),
+    'folder' => '/uploads/customers/',
 ]);
