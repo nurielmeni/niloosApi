@@ -19,5 +19,5 @@ $items = [
 
 echo \app\widgets\slickCarousel\SlickCarousel::widget([
     'items' => $items,
-    'folder' => Url::to('@web/uploads/customers'),
+    'folder' => Url::to('@web/uploads/customers/'),
 ]);
