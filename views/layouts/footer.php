@@ -13,7 +13,8 @@ use app\widgets\MemadLogo;
         <?= Memad3Social::widget([
             'socials' => [
                 'in' => key_exists('memadIn', Yii::$app->params) ? Yii::$app->params['memadIn'] : '#_',
-                'f' => key_exists('memadIn', Yii::$app->params) ? Yii::$app->params['memadFb'] : '#_',
+                'f' => key_exists('memadFb', Yii::$app->params) ? Yii::$app->params['memadFb'] : '#_',
+                'ins' => key_exists('memadIns', Yii::$app->params) ? Yii::$app->params['memadIns'] : '#_',
             ]
         ]) ?>
     </div>
