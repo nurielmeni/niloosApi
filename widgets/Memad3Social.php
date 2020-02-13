@@ -31,8 +31,3 @@ class Memad3Social extends \yii\bootstrap\Widget
         return $this->getSocials();       
     }
 }
-
-
-background: url(/images/socialShare/instegram-white.png) no-repeat center center;
-    background-size: contain;
-    margin: 5px;
