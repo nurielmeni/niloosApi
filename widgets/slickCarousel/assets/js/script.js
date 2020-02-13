@@ -14,6 +14,7 @@ $(document).ready(function() {
         slidesToScroll: 1,
         arrows: true,
         rtl: true,
+        autoplay: true,
         responsive: [
           {
             breakpoint: 1000,
