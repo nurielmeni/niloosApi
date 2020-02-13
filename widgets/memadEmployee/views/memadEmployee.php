@@ -20,7 +20,7 @@ use app\widgets\customSelect\CustomSelectWidget;
             <div class="flex space-between">
                 <span class="name"><?= $model->fullname ?></span>
                 <div class="actions flex">
-                    <a href="<?= $model->email ?>" class="mail glyphicon glyphicon-envelope bg-gradiant circle-button fg-white"></a>
+                    <a href="mailto:<?= $model->email ?>" class="mail glyphicon glyphicon-envelope bg-gradiant circle-button fg-white"></a>
                     <a href="<?= $model->linkedin ?>" class="linkedin bg-gradiant circle-button fg-white">in</a>
                 </div>
             </div>
