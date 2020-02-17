@@ -26,6 +26,9 @@ body {
     height: 100%;
     margin-top: -126px;
 }
+nav {
+    overflow: hidden;
+}
 
 nav .container {
     padding: 24px 0;
