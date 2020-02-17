@@ -31,6 +31,7 @@ nav .container {
     padding: 24px 0;
     font-size: 18px;
     line-height: 23px;
+    overflow: hidden;
 }
 
 .fg-white a {
