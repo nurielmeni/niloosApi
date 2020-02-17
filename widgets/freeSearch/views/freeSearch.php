@@ -13,6 +13,7 @@ use yii\bootstrap\ActiveForm;
 
 
 
+    <?= Html::tag('label', $prompt, ['class' => 'visible-xs'])?>
     <?php if (isset($action)) : ?>
         <?php $form = ActiveForm::begin([
             'action' => [$action], 
@@ -25,7 +26,6 @@ use yii\bootstrap\ActiveForm;
             'options' => ['class' => 'text-center flex center flex-wrap ' . ($inline ? 'row' : 'column')]
         ]); ?>   
     <?php endif; ?>
-        <?= Html::tag('label', $prompt, ['class' => 'visible-xs'])?>
         <?= $form->field($model, 'freetext', ['options' => ['class' =>  $inline ? 'form-group flex' : 'form-group']])->textInput([
             'prompt' => $model->getAttributeLabel('freeText'),
             'class' => 'free-text',
