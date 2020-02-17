@@ -13,7 +13,7 @@ use yii\bootstrap\ActiveForm;
 
 
 
-    <?= Html::tag('label', $prompt, ['class' => 'visible-xs', 'style' => 'width: 100%;'])?>
+    <?= Html::tag('label', $prompt, ['class' => 'visible-xs'])?>
     <?php if (isset($action)) : ?>
         <?php $form = ActiveForm::begin([
             'action' => [$action], 
