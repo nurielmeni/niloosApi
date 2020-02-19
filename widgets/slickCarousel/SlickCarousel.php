@@ -20,7 +20,7 @@ class SlickCarousel extends \yii\bootstrap\Widget
 
     public function init() {
         parent::init();
-        $this->publicPath = $this->publicPath ? $this->publicPath : \Yii::$app->basePath . '/web';
+        $this->publicPath = $this->publicPath ? \Yii::$app->basePath . $this->publicPath : \Yii::$app->basePath . '/web';
         $folderFiles = \yii\helpers\FileHelper::findFiles($this->publicPath  . $this->folder,[
             'only' => ['*.png','*.jpg'],
             'recursive' => false,
