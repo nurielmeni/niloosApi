@@ -14,5 +14,6 @@ $items = [
 
 echo \app\widgets\slickCarousel\SlickCarousel::widget([
     'items' => $items,
+    //'publicPath' => '/public_html', /* Prod (default "web" works in dev */
     'folder' => '/uploads/customers/',
 ]);

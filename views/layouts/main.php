@@ -11,6 +11,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use app\widgets\memadLogoNav\MemadLogoNav;
+use app\widgets\memadSubmit\MemadSubmitWidget;
 
 AppAsset::register($this);
 ?>
@@ -35,6 +36,8 @@ AppAsset::register($this);
 </head>
 <body dir="rtl">
 <?php $this->beginBody() ?>
+    
+<?= MemadSubmitWidget::widget() ?>
 
 <div class="wrap <?= $this->params['requestedRout'] ?>">
     <?=  MemadLogoNav::widget(['wrapClass' => 'visible-xs' . ($this->params['requestedRout'] == 'site-index' ? ' fg-blue' : ' fg-white')]) ?>

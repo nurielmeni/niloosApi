@@ -14,19 +14,20 @@ class SlickCarousel extends \yii\bootstrap\Widget
      * 
      */
     public $items = [];
+    public $publicPath;
     public $folder;
     public $wrapClass;
 
     public function init() {
         parent::init();
-        $path = \Yii::$app->basePath . '/public_html';
-        $folderFiles = \yii\helpers\FileHelper::findFiles($path  . $this->folder,[
+        $this->publicPath = $this->publicPath ? $this->publicPath : \Yii::$app->basePath . '/web';
+        $folderFiles = \yii\helpers\FileHelper::findFiles($this->publicPath  . $this->folder,[
             'only' => ['*.png','*.jpg'],
             'recursive' => false,
         ]);      
         if ($folderFiles && is_array($folderFiles)) {
             foreach ($folderFiles as $logo) {
-                array_push($this->items, ['img' => str_replace ($path , '' , $logo), 'alt' => 'Customer Logo']);
+                array_push($this->items, ['img' => str_replace ($this->publicPath , '' , $logo), 'alt' => 'Customer Logo']);
             }
         }
         

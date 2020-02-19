@@ -97,6 +97,15 @@ class SiteController extends MemadController
         $request = Yii::$app->request;
         
         if ($request->isAjax) {
+            Yii::$app->assetManager->bundles = [
+
+                'yii\bootstrap\BootstrapPluginAsset' => false,
+
+                'yii\bootstrap\BootstrapAsset' => false,
+
+                'yii\web\JqueryAsset' => false
+
+            ];
             $model = new ApplyForm();
             if ($request->isPost) {
                 // Fields: jobId, jobTitle, cvFile
