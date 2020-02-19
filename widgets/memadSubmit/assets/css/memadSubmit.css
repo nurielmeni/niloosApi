@@ -10,6 +10,7 @@ and open the template in the editor.
 #ajax-form-modal .modal-content {
     border-radius: 24px;
     width: 586px;
+    text-align: center;
 }
 
 #ajax-form-modal .ajax-form-modal-wrapper header {
