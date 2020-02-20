@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="left">
                 <div class="map"></div>
                 <div class="flex space-around flex-wrap">
-                    <span>מייל office@memad3.com</span>
+                    <span>מייל <?= Yii::$app->params['adminEmail'] ?></span>
                     <span>טלפון  072-2201111</span>
                 </div>
             </div>
