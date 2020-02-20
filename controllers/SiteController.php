@@ -139,7 +139,10 @@ class SiteController extends MemadController
     public function actionJobs()
     {
         if ($this->serachFormModel->load(Yii::$app->request->post())) {
-            return $this->render('jobs', ['jobs' => $this->serachFormModel->search()]);
+            return $this->render('jobs', [
+                'jobs' => $this->serachFormModel->search(),
+                'anchor' => 'search-result',
+            ]);
         }
         
         return $this->render('jobs', ['jobs' => []]);
@@ -153,7 +156,10 @@ class SiteController extends MemadController
     public function actionJob($jobId)
     {
         if ($this->serachFormModel->load(Yii::$app->request->post())) {
-            return $this->render('jobs', ['jobs' => $this->serachFormModel->search()]);
+            return $this->render('jobs', [
+                'jobs' => $this->serachFormModel->search(),
+                'anchor' => 'job-details',
+            ]);
         }
         
         $model = new \app\models\Job(['jobId' => $jobId]);

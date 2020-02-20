@@ -269,6 +269,10 @@ article.about > div.row > div {
     padding: 20px;
 }
 
+article.about > div.row > div.left > p {
+padding-inline-start: 40px;
+}
+
 section.about-employees > div.panels-employees {
     max-width: 1400px;
     padding: 10px 20px;

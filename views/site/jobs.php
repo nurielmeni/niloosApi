@@ -23,7 +23,7 @@ $this->title = 'המימד השלישי - לוח המשרות';
         'wrapClass' => 'flex center fg-white',
     ]) ?>
     
-    <section class="job-list center-block">
+    <section id="search-result" class="job-list center-block">
         <?php foreach($jobs as $job) : ?>
         <?= MemadJobWidget::widget(['job' => $job]) ?>
         <?php endforeach; ?>

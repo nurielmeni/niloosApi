@@ -35,7 +35,7 @@ $this->registerMetaTag([
         'wrapClass' => 'flex center fg-white',
     ]) ?>
     
-    <section class="job-list center-block">
+    <section id="job-details" class="job-list center-block">
         <?= MemadJobWidget::widget(['job' => $job, 'showHeaders' => true]) ?>
     </section>
 </div>

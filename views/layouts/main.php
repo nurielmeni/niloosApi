@@ -70,6 +70,15 @@ AppAsset::register($this);
 </footer>
 
 <?php $this->endBody() ?>
+    
+<?php if (isset($anchor) && strlen($anchor)) : ?>
+<?php 
+$js = <<<JS
+    location.hash=$anchor;
+JS;
+$this->registerScript($js);
+?>
+<?php endif; ?>
 </body>
 </html>
 <?php $this->endPage() ?>
