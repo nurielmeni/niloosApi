@@ -25,7 +25,7 @@ $this->registerMetaTag([
 $js = <<<JS
     location.hash = 'job-details';
 JS;
-$this->registerScript($js);
+$this->registerJs($js);
 ?>
 
 <div class="site-jobs">

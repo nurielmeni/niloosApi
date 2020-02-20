@@ -12,7 +12,7 @@ $this->title = 'המימד השלישי - לוח המשרות';
 $js = <<<JS
     location.hash = 'search-result';
 JS;
-$this->registerScript($js);?>
+$this->registerJs($js);?>
 
 <?= MemadSubmitWidget::widget() ?>
 
