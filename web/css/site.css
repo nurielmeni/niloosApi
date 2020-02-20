@@ -273,7 +273,7 @@ article.about > div.row > div {
     padding: 20px;
 }
 
-article.about > div.row > div.left > p {
+article.about > div.row > div.left p {
 padding-inline-start: 40px;
 }
 
