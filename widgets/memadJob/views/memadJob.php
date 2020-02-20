@@ -19,12 +19,12 @@ use yii\helpers\Url;
         </div>
         
         <div class="panel-body">
-            <?php if ($showHeaders) : ?>
-                <div class="description">
-                    <h2 class="header-title"><?= Yii::t('app', 'Description') ?></h2>
-                    <?= Helper::arrayStrVal($job, 'Description') ?>
-                </div>
-            <?php endif; ?>
+            <div class="description">
+                <?php if ($showHeaders) : ?>
+                <h2 class="header-title"><?= Yii::t('app', 'Description') ?></h2>
+                <?php endif; ?>
+                <?= Helper::arrayStrVal($job, 'Description') ?>
+            </div>
             <div class="requirements">
                 <?php if ($showHeaders) : ?>
                 <h2 class="header-title"><?= Yii::t('app', 'Requirements') ?></h2>
