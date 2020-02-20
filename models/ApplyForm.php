@@ -21,7 +21,7 @@ class ApplyForm extends Model
     {
         return [
             [['cvFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'docx, doc, pdf'],
-            [['jobId', 'jobTitle'], 'safe'],
+            [['jobId', 'jobTitle', 'jobCode'], 'safe'],
         ];
     }
     
