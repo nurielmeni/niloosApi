@@ -6,6 +6,25 @@
 
 
 $(document).ready(function() {
+    $('.social-share .social-toggle').click(function(){
+        var $button = $(this);
+        $(this).css('z-index', -1).siblings('.outer').animate({
+            width: 'toggle'
+        }, {
+            duration: 400,
+            easing: 'linear',
+            complete: function() { $button.css('z-index', 10); }
+        });
+    });
+    
+    $('.social-share .inner img').on('click', function() {
+        var url = $(this).data('url');
+        window.open(url,'_blank');
+    });
+});
+
+/*
+ * $(document).ready(function() {
     if (navigator.share) {
         const shareData = {
             title: 'MEMAD3',
@@ -46,3 +65,4 @@ $(document).ready(function() {
     }
 
 });
+ */
