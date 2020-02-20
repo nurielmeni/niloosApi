@@ -13,7 +13,7 @@ class ApplyForm extends Model
      */
     public $cvFile;
     public $jobId;
-    public $joCode;
+    public $jobCode;
     public $jobTitle;
     private $cvFileUrl;
 
