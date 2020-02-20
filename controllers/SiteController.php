@@ -154,7 +154,10 @@ class SiteController extends MemadController
             ]);
         }
         
-        return $this->render('jobs', ['jobs' => $this->serachFormModel->search(true)]);
+        return $this->render('jobs', [
+            'jobs' => $this->serachFormModel->search(true),
+            'anchor' => 'search-result',
+        ]);
     }
     
     /**

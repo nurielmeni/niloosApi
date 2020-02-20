@@ -11,15 +11,15 @@ $this->title = 'המימד השלישי - ' . $job['JobTitle'];
 
 $this->registerMetaTag([
     'property' => 'og:description',
-    'content' => urlencode($job['Requiremets']),
+    'content' => $job['Requiremets'],
 ]);
 $this->registerMetaTag([
     'property' => 'og:title',
-    'content' => urlencode($job['JobTitle']),
+    'content' => $job['JobTitle'],
 ]);
 $this->registerMetaTag([
     'property' => 'og:url',
-    'content' => urlencode(Url::to('site/job/' . $job['JobId'], true)),
+    'content' => Url::to('site/job/' . $job['JobId'], true),
 ]);
 
 $js = <<<JS

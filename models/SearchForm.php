@@ -212,7 +212,7 @@ class SearchForm extends Model
     }
     
     public function jobsByFreeText($freetext = '') {
-        if (empty($freetext)) return [];
+        //if (empty($freetext)) return [];
         $freetext = preg_split('/[\s,]+/', $freetext);
         /**
          * Object type of search
