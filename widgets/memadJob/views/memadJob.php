@@ -46,6 +46,7 @@ use yii\helpers\Url;
                     class="btn memad3 trans fg-blue show-ajax-modal" 
                     data-ajax-form-url="<?= Url::to($submitUrl) ?>"
                     data-job-id="<?= Helper::arrayStrVal($job, 'JobId') ?>"
+                    data-job-code="<?= Helper::arrayStrVal($job, 'JobCode') ?>"
                     data-job-title="<?= Helper::arrayStrVal($job, 'JobTitle') ?>"
                     >שלח קו״ח</button>
                 <?= SocialShare::widget([
