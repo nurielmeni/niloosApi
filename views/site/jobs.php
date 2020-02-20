@@ -10,6 +10,15 @@ use app\widgets\memadSubmit\MemadSubmitWidget;
 $this->title = 'המימד השלישי - לוח המשרות';
 ?>
 
+<?php if (isset($anchor) && strlen($anchor)) : ?>
+<?php 
+$js = <<<JS
+    location.hash=$anchor;
+JS;
+$this->registerScript($js);
+?>
+<?php endif; ?>
+
 <?= MemadSubmitWidget::widget() ?>
 
 <div class="site-jobs">

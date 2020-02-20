@@ -23,6 +23,14 @@ $this->registerMetaTag([
 ]);
 ?>
 
+<?php if (isset($anchor) && strlen($anchor)) : ?>
+<?php 
+$js = <<<JS
+    location.hash=$anchor;
+JS;
+$this->registerScript($js);
+?>
+<?php endif; ?>
 
 <div class="site-jobs">
     <header class="header-jobs single-job">
