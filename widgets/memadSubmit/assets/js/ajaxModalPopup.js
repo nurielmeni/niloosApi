@@ -36,7 +36,7 @@ $(function(){
         }
     });
     
-    var modalLoader = '<div style="text-align:center"><img src="/images/loader.gif"></div>';
+    var modalLoader = '<div class="lds-dual-ring"></div>';
     $('#ajax-form-modal').on('hidden.bs.modal, show.bs.modal', function () {
         $(this).find('.modal-content').html(modalLoader);
     });

@@ -8,8 +8,6 @@ use app\widgets\memadSubmit\MemadSubmitWidget;
 $this->title = Yii::$app->name;
 ?>
 
-<?= MemadSubmitWidget::widget() ?>
-
 <div class="site-index">
 
     <section class="header">

@@ -38,7 +38,7 @@ JS;
         <?= FreeSearchWidget::widget([
             'model' => $serachFormModel,
             'inline' => true,
-            'wrapClass' => 'flex center fg-blue hidden',
+            'wrapClass' => 'flex flex-wrap center fg-blue hidden',
             'prompt' => 'איזו משרה את/ה מחפש/ת?',
         ]) ?>
     </div>

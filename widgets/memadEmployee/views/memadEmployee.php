@@ -20,8 +20,12 @@ use app\widgets\customSelect\CustomSelectWidget;
             <div class="flex space-between">
                 <span class="name"><?= $model->fullname ?></span>
                 <div class="actions flex">
-                    <a href="mailto:<?= $model->email ?>" class="mail glyphicon glyphicon-envelope bg-gradiant circle-button fg-white"></a>
-                    <a href="<?= $model->linkedin ?>" class="linkedin bg-gradiant circle-button fg-white">in</a>
+                    <?php if (strlen($model->email) > 4) : ?>
+                        <a href="mailto:<?= $model->email ?>" class="mail glyphicon glyphicon-envelope bg-gradiant circle-button fg-white"></a>
+                    <?php endif; ?>
+                    <?php if (strlen($model->linkedin) > 4) : ?>
+                        <a href="<?= $model->linkedin ?>" class="linkedin bg-gradiant circle-button fg-white">in</a>
+                    <?php endif; ?>
                 </div>
             </div>
             <p class="job-title"><?= $model->jobTitle ?></p>

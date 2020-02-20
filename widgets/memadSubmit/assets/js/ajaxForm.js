@@ -1,4 +1,13 @@
-$(document).on('beforeSubmit', '#ajax-form-modal form', function () {
+$(document).on('beforeSubmit', '#ajax-form-modal form', beforeSubmitHandler);  
+$(document).on('change', '#applyform-cvfile', function() {
+    if (this.files.length) {
+        $('.drag-file-area').css('background-color', '#eafff2');
+    } else {
+        $('.drag-file-area').css('background-color', 'transparent');
+    }
+});
+
+function beforeSubmitHandler() {
   var $yiiform = $(this);
   var $modal = $yiiform.parents('.modal');
   var $content = $('#ajax-form-modal .modal-content');
@@ -22,8 +31,8 @@ $(document).on('beforeSubmit', '#ajax-form-modal form', function () {
     //setTimeout(function() { $modal.modal('hide'); },5000);
   });
 
-  return false; // prevent default form submission
-});
+  return false; // prevent default form submission    
+}
 
 function dropHandler(ev) {
   console.log('File(s) dropped');
@@ -33,10 +42,9 @@ function dropHandler(ev) {
   ev.preventDefault();
 
   if (ev.dataTransfer.files) {
-    var event = new Event('change');
 
     fileInput.files = ev.dataTransfer.files;
-    fileInput.dispatchEvent(event);
+    $('#applyform-cvfile').change();
   }
 }
 
