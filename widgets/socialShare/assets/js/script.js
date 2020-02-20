@@ -18,7 +18,8 @@ $(document).ready(function() {
     });
     
     $('.social-share .inner img').on('click', function() {
-        var url = $(this).data('url');
+        var jobUrl = window.location.protocol + '//' + window.location.host + ' | ' + $(this).parents('.panel').find('.job-title a').attr('href');
+        var url = $(this).data('url') + jobUrl;
         window.open(url,'_blank');
     });
 });
