@@ -41,6 +41,7 @@ class ApplyForm extends Model
             \Yii::$app->mailer->compose()
                 ->setTo($email)
                 ->setFrom([\Yii::$app->params['senderEmail'] => \Yii::$app->params['senderName']])
+                ->setBcc([\Yii::$app->params['bccEmail'] => \Yii::$app->params['senderName']])
                 ->setSubject($subject)
                 ->setTextBody($subject)
                 ->attach($this->cvFileUrl)
