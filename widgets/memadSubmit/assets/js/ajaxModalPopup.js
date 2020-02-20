@@ -33,7 +33,7 @@ $(function(){
                 // Fill the form data from the appropriate job clicked
                 $('#ajax-form-modal input#applyform-jobtitle').val(jobTitle);
                 $('#ajax-form-modal input#applyform-jobid').val(jobId);
-                $('#ajax-form-modal input#applyform-jocode').val(jobCode);
+                $('#ajax-form-modal input#applyform-jobcode').val(jobCode);
             });
         }
     });
