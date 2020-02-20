@@ -23,7 +23,7 @@ $this->registerMetaTag([
 ]);
 
 $js = <<<JS
-    location.hash = 'job-details';
+    location.href = '#job-details';
 JS;
 $this->registerJs($js);
 ?>

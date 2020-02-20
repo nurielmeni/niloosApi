@@ -10,7 +10,7 @@ use app\widgets\memadSubmit\MemadSubmitWidget;
 $this->title = 'המימד השלישי - לוח המשרות';
 
 $js = <<<JS
-    location.hash = 'search-result';
+    location.href = '#search-result';
 JS;
 $this->registerJs($js);?>
 
