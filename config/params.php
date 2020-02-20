@@ -9,5 +9,5 @@ return [
     'memadIn' => 'https://www.linkedin.com/company/memad-3/?viewAsMember=true',
     'memadFb' => 'https://www.facebook.com/Memad3Jobs/',
     'memadIns' => 'https://instagram.com/memad_3?igshid=mppbqkpg7apq',
-    'flushCache' => false,
+    'flushCache' => true,
 ];
