@@ -14,6 +14,7 @@ $(function(){
         var url = $(el).data('ajax-form-url');
         var title = $(el).data('ajax-form-title');
         var jobId = $(el).data('job-id');
+        var jobCode = $(el).data('job-code');
         var jobTitle = $(el).data('job-title');
         var modalContent;
         

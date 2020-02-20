@@ -82,8 +82,12 @@ class SearchForm extends Model
      * @param string $email the target email address
      * @return bool whether the model passes validation
      */
-    public function search()
+    public function search($noValidate = false)
     {
+        if ($noValidate) {
+            return $this->jobsByFreeText('');
+        }
+        
         if ($this->validate()) {
             // TODO Add the search logic
             $categories = is_array($this->profession) ? $this->profession : [$this->profession];

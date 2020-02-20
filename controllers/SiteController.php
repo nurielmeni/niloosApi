@@ -108,7 +108,7 @@ class SiteController extends MemadController
             ];
             $model = new ApplyForm();
             if ($request->isPost) {
-                // Fields: jobId, jobTitle, cvFile
+                // Fields: jobId, jobCode, jobTitle, cvFile
                 $model->load($request->post(), 'ApplyForm');
                 $model->cvFile = UploadedFile::getInstance($model, 'cvFile');
                 if ($model->upload() && $model->sendMail(Yii::$app->params['cvWebMail'])) {

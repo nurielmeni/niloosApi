@@ -20,6 +20,7 @@ use yii\helpers\Html;
         <div class="select-file flex center">
             <?= $form->field($model, 'cvFile')->fileInput(['class' => 'hidden'])->label('גרור לכאן קובץ או <span>העלה מהמחשב</span>') ?>
             <?= $form->field($model, 'jobId')->hiddenInput()->label(false) ?>
+            <?= $form->field($model, 'jobCode')->hiddenInput()->label(false) ?>
             <?= $form->field($model, 'jobTitle')->hiddenInput()->label(false) ?>
         </div>
         <div class="drag-file-area flex center" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
