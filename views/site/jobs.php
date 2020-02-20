@@ -8,16 +8,11 @@ use yii\helpers\Url;
 use app\widgets\memadSubmit\MemadSubmitWidget;
 
 $this->title = 'המימד השלישי - לוח המשרות';
-?>
 
-<?php if (isset($anchor) && strlen($anchor)) : ?>
-<?php 
 $js = <<<JS
-    location.hash=$anchor;
+    location.hash = 'search-result';
 JS;
-$this->registerScript($js);
-?>
-<?php endif; ?>
+$this->registerScript($js);?>
 
 <?= MemadSubmitWidget::widget() ?>
 

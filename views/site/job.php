@@ -21,16 +21,12 @@ $this->registerMetaTag([
     'property' => 'og:url',
     'content' => urlencode(Url::to('site/job/' . $job['JobId'], true)),
 ]);
-?>
 
-<?php if (isset($anchor) && strlen($anchor)) : ?>
-<?php 
 $js = <<<JS
-    location.hash=$anchor;
+    location.hash = 'job-details';
 JS;
 $this->registerScript($js);
 ?>
-<?php endif; ?>
 
 <div class="site-jobs">
     <header class="header-jobs single-job">
