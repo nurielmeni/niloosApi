@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="left">
                 <div class="employer-info bg-blue fg-white flex column space-between">
                     <p class="first">נשמח לתת לכם מענה ולהתאים עבורכם מנהל/ת לקוח
-שילווה את התהליכים מקצה לקצה תוך מתן מנעה מקצועי 
+שילווה את התהליכים מקצה לקצה תוך מתן מענה מקצועי 
 וממוקד לדרישות הגיוס בחרתכם.</p>
                     <p class="second fg-light-blue">לפרטי נוספים, מוזמנים לפנות לטליה וורצקי,
 מנהלת השיווק של ׳המימד השלישי׳</p>
