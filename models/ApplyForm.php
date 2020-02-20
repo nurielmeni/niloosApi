@@ -36,7 +36,7 @@ class ApplyForm extends Model
     }
     
     public function sendMail($email) {
-        $subject = "התקבלה מועמדות למשרה - $this->jobTitle - מזהה משרה - $this->jobCode";
+        $subject = "התקבלה מועמדות למשרה - $this->jobTitle - מזהה משרה - $this->jobId";
         if ($this->validate()) {
             \Yii::$app->mailer->compose()
                 ->setTo($email)
