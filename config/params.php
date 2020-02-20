@@ -2,7 +2,7 @@
 
 return [
     'adminEmail' => 'info@memad3.com',
-    'bccEmail' => 'nurielmeni@gmail.com',
+    'bccEmail' => 'meni-nuriel@hotmail.com',
     'senderEmail' => 'memad3@cvwebmail.net',
     'senderName' => 'Memad-3 Jobs',
     'cvWebMail' => 'memad3@cvwebmail.net',
