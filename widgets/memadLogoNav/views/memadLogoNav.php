@@ -1,6 +1,6 @@
 <div class="<?= $wrapClass ?>">
     <div class="bg">
-        <img src="<?= $logo ?>" alt="Memad3 Logo" />
+        <a href="<?= Yii::$app->homeUrl ?>"><img src="<?= $logo ?>" alt="Memad3 Logo" /></a>
     </div>
     <div class="memad-logo-nav">
         <span><?= $topLine ?></span>
