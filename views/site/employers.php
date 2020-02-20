@@ -38,8 +38,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="employer-info bg-blue fg-white flex column space-between">
                     <p class="first">נשמח לתת לכם מענה ולהתאים עבורכם מנהל/ת לקוח
 שילווה את התהליכים מקצה לקצה תוך מתן מענה מקצועי 
-וממוקד לדרישות הגיוס בחרתכם.</p>
-                    <p class="second fg-light-blue">לפרטי נוספים, מוזמנים לפנות לטליה וורצקי,
+וממוקד לדרישות הגיוס בחברתכם.</p>
+                    <p class="second fg-light-blue">לפרטים נוספים, מוזמנים לפנות לטליה וורצקי,
 מנהלת השיווק של ׳המימד השלישי׳</p>
                     <p class="third">טלפון      054-6868011 | 072-2201112
 מייל         talya@memad3.com</p>
