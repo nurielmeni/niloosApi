@@ -18,12 +18,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
 
         <?php Modal::begin([
-            'headerOptions' => ['style' => 'background: url("' . Url::to('@web/images/contact-modal-header.jpg') . '") no-repeat center center; background-size: 100%; height: 420px;'],
-            'bodyOptions' => ['class' => 'text-center']]); ?>
+            'headerOptions' => ['style' => 'background: url("' . Url::to('@web/images/contact-modal-header.jpg') . '") no-repeat center center; background-size: 100%; height: 160px;border-top-left-radius: 6px; border-top-right-radius: 6px;'],
+            'bodyOptions' => ['class' => 'text-center'],
+            'clientOptions' => ['show' => true]]); ?>
     
             <h1>תודה על פנייתך!</h1>
-            <p>לאחר עדכון קורות החיים שלך במערכת הגיוס שלנו,
-        תקבל/י מאיתנו אישור לכותובת המייל המעודכנת בקורות החיים.</p>
+            <p>הפרטים ששלחת התקבלו במימד 3</p>
             <p class="no-margin">תודה ובהצלחה,</p>
             <p>׳המימד השלישי גיוס והשמה׳</p>
             
