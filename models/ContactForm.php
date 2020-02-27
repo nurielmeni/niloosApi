@@ -57,8 +57,8 @@ class ContactForm extends Model
                 ->setFrom([Yii::$app->params['senderEmail'] => Yii::$app->params['senderName']])
                 ->setReplyTo([$this->email => $this->name])
                 ->setBcc(Yii::$app->params['bccEmail'])
+                ->setHtmlBody($this->body)
                 ->setSubject($this->subject)
-                ->setTextBody($this->body)
                 ->send();
 
             return true;
