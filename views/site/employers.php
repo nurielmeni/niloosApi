@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
                     <div class="inline-fields flex flex-wrap space-between">
-                        <?= $form->field($model, 'name')->textInput(['placeholder' => $model->getAttributeLabel('name'), 'autofocus' => true])->label(false) ?>
+                        <?= $form->field($model, 'name')->textInput(['placeholder' => $model->getAttributeLabel('name')])->label(false) ?>
 
                         <?= $form->field($model, 'email')->textInput(['placeholder' => $model->getAttributeLabel('email')])->label(false) ?>
                     </div>
