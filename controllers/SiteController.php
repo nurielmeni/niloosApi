@@ -81,7 +81,7 @@ class SiteController extends MemadController
      */
     public function actionContact()
     {
-        $model = new ContactForm();
+        $model = new ContactForm(['subject' => Yii::t('app', 'Subject')]);
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
 
@@ -128,7 +128,7 @@ class SiteController extends MemadController
      */
     public function actionEmployers()
     {
-        $model = new ContactForm();
+        $model = new ContactForm(['subject' => Yii::t('app', 'Subject Employers')]);
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
 
