@@ -28,7 +28,7 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     
     <meta property="og:image" content="<?= Url::to('@web/images/logo.png', 'https') ?>" />
-    <meta property="og:description" content="<?= Yii::t('app', 'Memad Description') ?>" />
+    <meta property="og:description" content='<?= Yii::t('app', 'Memad Description') ?>' />
 
     <link rel="icon" type="image/png" href="<?= Url::to('@web/images/logo.png') ?>" />
     <?php $this->registerCsrfMetaTags() ?>
