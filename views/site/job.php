@@ -9,10 +9,10 @@ use app\widgets\memadSubmit\MemadSubmitWidget;
 
 $this->title = 'המימד השלישי - ' . $job['JobTitle'];
 
-$this->registerMetaTag([
-    'property' => 'og:description',
-    'content' => $job['Requiremets'],
-]);
+//$this->registerMetaTag([
+//    'property' => 'og:description',
+//    'content' => $job['Requiremets'],
+//]);
 $this->registerMetaTag([
     'property' => 'og:title',
     'content' => $job['JobTitle'],
