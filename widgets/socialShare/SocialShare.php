@@ -44,7 +44,7 @@ class SocialShare extends \yii\bootstrap\Widget
                 return $item['url'] . $this->shareUrl;
                 break;
             case 'Whatsapp': 
-                return $item['url'] . $this->shareText;
+                return $item['url'] . $this->shareText . '+%7C+' . $this->shareUrl;
                 break;
         }
     }
