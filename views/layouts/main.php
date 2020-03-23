@@ -1,82 +1,31 @@
-<?php
-
-/* @var $this \yii\web\View */
-/* @var $content string */
-
-use app\widgets\Alert;
-use yii\helpers\Html;
-use yii\helpers\Url;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
-use app\assets\AppAsset;
-use app\widgets\memadLogoNav\MemadLogoNav;
-use app\widgets\memadSubmit\MemadSubmitWidget;
-
-AppAsset::register($this);
-?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
-<head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <meta name="language" content="Hebrew">
-    <meta name="author" content="Meni Nuriel">
-    <meta charset="<?= Yii::$app->charset ?>">
-    
-    <meta property="og:locale" content="he_IL" />    
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="<?= Url::to('@web/images/memad-share.jpg', 'https') ?>" />
-    <meta property="og:description" content='<?= Yii::t('app', 'Memad Description') ?>' />
+    <head>
+        <meta charset="<?= Yii::$app->charset ?>">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" type="image/png" href="<?= Url::to('@web/images/logo.png') ?>" />
-    <?php $this->registerCsrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
-</head>
-<body dir="rtl">
-<?php $this->beginBody() ?>
-    
-<?= MemadSubmitWidget::widget() ?>
+        <meta name="language" content="Hebrew">
+        <meta name="author" content="Meni Nuriel">
+        <meta charset="<?= Yii::$app->charset ?>">
 
-<div class="wrap <?= $this->params['requestedRout'] ?>">
-    <?=  MemadLogoNav::widget(['wrapClass' => 'visible-xs' . ($this->params['requestedRout'] == 'site-index' ? ' fg-blue' : ' fg-white')]) ?>
 
-    <?php NavBar::begin([
-        'brandUrl' => false,
-        'renderInnerContainer' => true,
-        'headerContent' => \app\widgets\Memad3Social::widget([
-            'socials' => [
-                'in' => key_exists('memadIn', Yii::$app->params) ? Yii::$app->params['memadIn'] : '#_',
-                'f' => key_exists('memadIn', Yii::$app->params) ? Yii::$app->params['memadFb'] : '#_',
-            ]
-        ]),
-        'options' => [
-            'class' => 'navbar navbar-static-top',
-        ],
-    ]); ?>
+        <?php $this->registerCsrfMetaTags() ?>
+        <title><?= $this->title ?></title>
+        <?php $this->head() ?>
+    </head>
     
-    <?= $this->render('nav', ['class' => 'navbar-header' . ($this->params['requestedRout'] == 'site-index' ? ' fg-blue' : ' fg-white'), 'user' => false]) ?>
-    
-    <?= MemadLogoNav::widget(['wrapClass' => 'hidden-xs' . ($this->params['requestedRout'] == 'site-index' ? ' fg-blue' : ' fg-white')]) ?>
-    
-    <?php NavBar::end(); ?>
+    <body dir="rtl">
+    <?php $this->beginBody() ?>
+        
+        <?= $content ?> 
+        
+        <footer class="footer">
+        </footer>
 
-    <main>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </main>
-</div>
-
-<footer class="footer">
-    <?= $this->render('footer', ['model' => $this->params['serachFormModel']]) ?>
-</footer>
-
-<?php $this->endBody() ?>
+    <?php $this->endBody() ?>
+    </body>
     
-</body>
 </html>
 <?php $this->endPage() ?>

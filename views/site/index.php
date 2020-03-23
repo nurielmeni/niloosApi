@@ -1,25 +1,10 @@
 <?php
 
-/* @var $this yii\web\View */
-use app\widgets\memadSearch\MemadSearchWidget;
-use yii\helpers\Url;
-use app\widgets\memadSubmit\MemadSubmitWidget;
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-$this->title = Yii::$app->name;
 ?>
-
-<div class="site-index">
-
-    <section class="header">
-        <?= $this->render('sections/header', ['serachFormModel' => $this->params['serachFormModel']]) ?>
-    </section>
-    
-    <section class="about">
-        <?= $this->render('sections/about') ?>
-    </section>
-    
-    <section class="customers">
-        <?= $this->render('sections/customers') ?>
-    </section>
-    
-</div>
+<h2>This is the API</h2>

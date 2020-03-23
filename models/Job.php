@@ -56,15 +56,17 @@ class Job extends \yii\base\Model {
             ];
         }
         
-        return [
-            'JobId' => $jobObj->JobId,
-            'JobCode' => $jobObj->JobCode,
-            'JobTitle' => $jobObj->JobTitle,
-            'Description' => $jobObj->Description,
-            'Requiremets' => $jobObj->Requirements,
-            'Skills' => $jobObj->Skills,
-            'UpdateDate' => $jobObj->UpdateDate,
-            'OpenDate' => $jobObj->OpenDate,
-        ];
+        return $jobObj;
+        
+//        return [
+//            'JobId' => $jobObj->JobId,
+//            'JobCode' => $jobObj->JobCode,
+//            'JobTitle' => $jobObj->JobTitle,
+//            'Description' => $jobObj->Description,
+//            'Requiremets' => $jobObj->Requirements,
+//            'Skills' => $jobObj->Skills,
+//            'UpdateDate' => $jobObj->UpdateDate,
+//            'OpenDate' => $jobObj->OpenDate,
+//        ];
     }
 }

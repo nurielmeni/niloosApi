@@ -15,7 +15,7 @@ use app\models\Staff;
 use yii\web\UploadedFile;
 use app\models\ApplyForm;
 
-class SiteController extends MemadController
+class SiteController extends \yii\web\Controller
 {
     /**
      * {@inheritdoc}
@@ -23,6 +23,24 @@ class SiteController extends MemadController
     public function behaviors()
     {
         return [
+            'corsFilter' => [
+                'class' => \yii\filters\Cors::className(),
+                'cors' => [
+                    'Access-Control-Allow-Origin' => '*',
+                    // restrict access to
+                    'Origin' => ['http://localhost:8080', 'http://10.0.0.12:8080'],
+                    // Allow only POST and PUT methods
+                    'Access-Control-Request-Method' => ['POST', 'PUT'],
+                    // Allow only headers 'X-Wsse'
+                    'Access-Control-Request-Headers' => ['X-Wsse'],
+                    // Allow credentials (cookies, authorization headers, etc.) to be exposed to the browser
+                    'Access-Control-Allow-Credentials' => true,
+                    // Allow OPTIONS caching
+                    'Access-Control-Max-Age' => 3600,
+                    // Allow the X-Pagination-Current-Page header to be exposed to the browser.
+                    'Access-Control-Expose-Headers' => ['X-Pagination-Current-Page'],
+                ],
+            ],
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['logout'],
@@ -38,6 +56,7 @@ class SiteController extends MemadController
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
+                    'apply' => ['post'],
                 ],
             ],
         ];
@@ -65,33 +84,10 @@ class SiteController extends MemadController
      * @return string
      */
     public function actionIndex()
-    {
-        if ($this->serachFormModel->load(Yii::$app->request->post())) {
-            $this->view->params['requestedRout'] = 'site-jobs';
-            return $this->render('jobs', ['jobs' => $this->serachFormModel->search()]);
-        }
-        
+    {        
         return $this->render('index');
     }
-
-    /**
-     * Displays contact page.
-     *
-     * @return Response|string
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm(['subject' => Yii::t('app', 'Subject')]);
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
-
+    
     public function actionApply()
     {
         $request = Yii::$app->request;
@@ -122,42 +118,27 @@ class SiteController extends MemadController
     }
     
     /**
-     * Displays contact page.
-     *
-     * @return Response|string
-     */
-    public function actionEmployers()
-    {
-        $model = new ContactForm(['subject' => Yii::t('app', 'Subject Employers')]);
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('employers', [
-            'model' => $model,
-        ]);
-    }
-
-    
-    /**
      * Displays Jobs page.
      *
      * @return string
      */
     public function actionJobs()
     {
-        if ($this->serachFormModel->load(Yii::$app->request->post())) {
-            return $this->render('jobs', [
-                'jobs' => $this->serachFormModel->search(),
-                'anchor' => 'search-result',
-            ]);
+        $searchModel = new SearchForm();
+        
+//        $searchModel = new SearchForm([
+//            'location' => '',
+//            'profession' => '',
+//            'suplierId' => '',
+//            'freetext' => '',
+//        ]);
+
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        if ($searchModel->load(Yii::$app->request->get())) {
+            return $searchModel->search(true);
         }
         
-        return $this->render('jobs', [
-            'jobs' => $this->serachFormModel->search(true),
-            'anchor' => 'search-result',
-        ]);
+        return $searchModel->search(true);
     }
     
     /**
@@ -167,63 +148,10 @@ class SiteController extends MemadController
      */
     public function actionJob($jobId)
     {
-        if ($this->serachFormModel->load(Yii::$app->request->post())) {
-            return $this->render('jobs', [
-                'jobs' => $this->serachFormModel->search(),
-                'anchor' => 'job-details',
-            ]);
-        }
-        
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         $model = new \app\models\Job(['jobId' => $jobId]);
         
-        return $this->render('job', ['job' => $model->job]);
+                
+        return $model->getJob();
     }
-    
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        $employees = Staff::find()->all();
-        return $this->render('about', ['employees' => $employees]);
-    }
-        
-    /**
-     * Login action.
-     *
-     * @return Response|string
-    */     
-    public function actionLogin()
-    {
-        $this->layout = 'secure';
-        
-        if (!Yii::$app->user->isGuest) {
-            return $this->redirect('/staff/index');
-        }
-
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
-
-        $model->password = '';
-        return $this->render('login', [
-            'model' => $model,
-        ]);
-    }
-    
-    /**
-     * Logout action.
-     *
-     * @return Response
-    */
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
-
-        return $this->goHome();
-    }
-    
 }

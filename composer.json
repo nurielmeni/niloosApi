@@ -22,13 +22,7 @@
         "bizley/quill": "* dev-master",
         "airani/yii2-bootstrap-rtl": "*",
         "kartik-v/yii2-mpdf": "dev-master",
-        "kartik-v/yii2-widget-colorinput": "dev-master",
-        "kartik-v/yii2-widget-switchinput": "dev-master",
-        "kartik-v/yii2-widget-select2": "dev-master",
-        "kartik-v/yii2-checkbox-x": "dev-master",
-        "paragonie/random_compat": ">=1 <9.99",
-	"evgeniyrru/yii2-slick" : "*",
-        "kartik-v/yii2-widget-growl": "*"
+        "paragonie/random_compat": ">=1 <9.99"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

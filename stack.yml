@@ -11,31 +11,6 @@ services:
     environment:
       PHP_ENABLE_XDEBUG: 1
     networks:
-      - memadnet
-  db:
-    image: mariadb:10.4.6
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=memad
-      - MYSQL_USER=memad
-      - MYSQL_PASSWORD=memad
-    volumes:
-      - memad-db:/var/lib/mysql
-    networks:
-      - memadnet
-  pma:
-    image: phpmyadmin/phpmyadmin
-    environment:
-      - PMA_HOST=db
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=memad
-      - MYSQL_USER=memad
-      - MYSQL_PASSWORD=memad
-    ports:
-      - 8080:80
-    networks:
-      - memadnet
+      - nlsapinet
 networks:
-  memadnet:
-volumes:
-  memad-db:
+  nlsapinet:
