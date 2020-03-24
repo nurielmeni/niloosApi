@@ -7,4 +7,4 @@
  */
 
 ?>
-<h2>This is the API</h2>
+<h2>This page is not for web use.</h2>

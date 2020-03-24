@@ -20,7 +20,7 @@ class ApplyForm extends Model
     public function rules()
     {
         return [
-            [['cvFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'docx, doc, pdf'],
+            [['cvFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'docx, doc, pdf'],
             [['jobId', 'jobTitle', 'jobCode'], 'safe'],
         ];
     }
@@ -39,14 +39,16 @@ class ApplyForm extends Model
     public function sendMail($email) {
         $subject = "התקבלה מועמדות למשרה - $this->jobTitle - מזהה משרה - $this->jobCode";
         if ($this->validate()) {
-            \Yii::$app->mailer->compose()
+            $mail = \Yii::$app->mailer->compose()
                 ->setTo($email)
                 ->setFrom([\Yii::$app->params['senderEmail'] => \Yii::$app->params['senderName']])
                 ->setBcc([\Yii::$app->params['bccEmail'] => \Yii::$app->params['senderName']])
                 ->setSubject($subject)
-                ->setTextBody($subject)
-                ->attach($this->cvFileUrl)
-                ->send();
+                ->setTextBody($subject);
+
+            if($this->cvFileUrl) $mail->attach($this->cvFileUrl);
+            $mail->send();
+
 
             return true;
         }

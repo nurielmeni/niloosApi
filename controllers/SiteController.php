@@ -18,6 +18,11 @@ use app\models\ApplyForm;
 class SiteController extends \yii\web\Controller
 {
     /**
+     * @var bool See details {@link \yii\web\Controller::$enableCsrfValidation}.
+     */
+    public $enableCsrfValidation = false;
+
+    /**
      * {@inheritdoc}
      */
     public function behaviors()
@@ -26,19 +31,13 @@ class SiteController extends \yii\web\Controller
             'corsFilter' => [
                 'class' => \yii\filters\Cors::className(),
                 'cors' => [
-                    'Access-Control-Allow-Origin' => '*',
-                    // restrict access to
-                    'Origin' => ['http://localhost:8080', 'http://10.0.0.12:8080'],
-                    // Allow only POST and PUT methods
-                    'Access-Control-Request-Method' => ['POST', 'PUT'],
-                    // Allow only headers 'X-Wsse'
-                    'Access-Control-Request-Headers' => ['X-Wsse'],
-                    // Allow credentials (cookies, authorization headers, etc.) to be exposed to the browser
-                    'Access-Control-Allow-Credentials' => true,
-                    // Allow OPTIONS caching
-                    'Access-Control-Max-Age' => 3600,
-                    // Allow the X-Pagination-Current-Page header to be exposed to the browser.
-                    'Access-Control-Expose-Headers' => ['X-Pagination-Current-Page'],
+                    'Origin' => ['*'], 
+                    'Accept' => ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'], 
+                    'Access-Control-Request-Method' => ['GET', 'POST'], 
+                    'Access-Control-Request-Headers' => ['*'], 
+                    'Access-Control-Allow-Credentials' => null, 
+                    'Access-Control-Max-Age' => 86400, 
+                    'Access-Control-Expose-Headers' => []
                 ],
             ],
             'access' => [
@@ -56,7 +55,6 @@ class SiteController extends \yii\web\Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
-                    'apply' => ['post'],
                 ],
             ],
         ];
@@ -92,29 +90,24 @@ class SiteController extends \yii\web\Controller
     {
         $request = Yii::$app->request;
         
-        if ($request->isAjax) {
-            Yii::$app->assetManager->bundles = [
-
-                'yii\bootstrap\BootstrapPluginAsset' => false,
-
-                'yii\bootstrap\BootstrapAsset' => false,
-
-                'yii\web\JqueryAsset' => false
-
-            ];
+        //if ($request->isAjax) {
             $model = new ApplyForm();
             if ($request->isPost) {
                 // Fields: jobId, jobCode, jobTitle, cvFile
-                $model->load($request->post(), 'ApplyForm');
+                $post = $request->post();
+                $model->load(['ApplyForm' => $post], 'ApplyForm');
                 $model->cvFile = UploadedFile::getInstance($model, 'cvFile');
-                if ($model->upload() && $model->sendMail(Yii::$app->params['cvWebMail'])) {
+                if ($model->cvFile) {
+                    $model->upload();
+                }
+                if ($model->sendMail(Yii::$app->params['cvWebMail'])) {
                     // file is uploaded successfully send mail
-                    return $this->renderAjax('thank');
+                    return 'File uploaded successfully and email sent';
                 }
             }
 
-            return $this->renderAjax('apply', ['model' => $model]);
-        }
+            return 'OK';
+        //}
     }
     
     /**
