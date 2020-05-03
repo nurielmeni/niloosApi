@@ -83,7 +83,8 @@ class SiteController extends \yii\web\Controller
      */
     public function actionIndex()
     {        
-        return $this->render('index');
+        $this->layout = 'vue';
+        return $this->render('index.html');
     }
     
     public function actionApply()
