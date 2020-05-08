@@ -10,7 +10,6 @@ services:
       - '9005:9005'
     environment:
       PHP_ENABLE_XDEBUG: 1
-      XDEBUG_CONFIG: "idekey=VSCODE"
     networks:
       - nlsapinet
 networks:
