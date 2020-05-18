@@ -4,8 +4,8 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'memad3',
-    'name' => 'המימד השלישי',
+    'id' => 'niloosApi',
+    'name' => 'Niloos Api',
     'language' => 'he-IL',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
@@ -66,7 +66,9 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'site/job/<jobId:\d+>' => 'site/job',
+                'api/<project:\w+>/<action:\w+>' => 'api/<action>',
+                'api/<project:\w+>/job/<jobId:\d+>' => 'api/job',
+                '<project:\w+>' => '/site/index'
             ],
         ],
     ],

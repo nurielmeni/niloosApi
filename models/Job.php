@@ -49,7 +49,7 @@ class Job extends \yii\base\Model {
                 'JobCode' => '',
                 'JobTitle' => '',
                 'Description' => '',
-                'Requiremets' => 'Error: Job date for Job Id: ' . $this->jobId . ' wes not found in Niloos Service!',
+                'Requiremets' => 'Error: Job data for Job Id: ' . $this->jobId . ' wes not found in Niloos Service!',
                 'Skills' => '',
                 'UpdateDate' => '',
                 'OpenDate' => '',

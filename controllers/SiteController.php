@@ -4,14 +4,9 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-use yii\web\Controller;
-use yii\web\Response;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
+use yii\base\Theme;
 use app\models\SearchForm;
-use \app\components\Niloos;
-use app\models\Staff;
 use yii\web\UploadedFile;
 use app\models\ApplyForm;
 
@@ -75,77 +70,31 @@ class SiteController extends \yii\web\Controller
             ],
         ];
     }
+    
+    private function switchTheme($theme) {
+        if (Yii::$app->view->theme !== $theme) {
+            Yii::$app->view->theme = new Theme([
+                'basePath' => '@app/themes/' . $theme,
+                'baseUrl' => '@web/themes/' . $theme,
+                'pathMap' => [
+                    '@app/views' => '@app/themes/' . $theme,
+                ],
+            ]);
+        }
+    }
+    
+
 
     /**
      * Displays homepage.
      *
      * @return string
      */
-    public function actionIndex()
-    {        
+    public function actionIndex($project)
+    {
+        // Set the theme based on the project
+        $this->switchTheme($project);
         $this->layout = 'vue';
         return $this->render('index.html');
-    }
-    
-    public function actionApply()
-    {
-        $request = Yii::$app->request;
-        
-        //if ($request->isAjax) {
-            $model = new ApplyForm();
-            if ($request->isPost) {
-                // Fields: jobId, jobCode, jobTitle, cvFile
-                $post = $request->post();
-                $model->load(['ApplyForm' => $post], 'ApplyForm');
-                $model->cvFile = UploadedFile::getInstance($model, 'cvFile');
-                if ($model->cvFile) {
-                    $model->upload();
-                }
-                if ($model->sendMail(Yii::$app->params['cvWebMail'])) {
-                    // file is uploaded successfully send mail
-                    return 'File uploaded successfully and email sent';
-                }
-            }
-
-            return 'OK';
-        //}
-    }
-    
-    /**
-     * Displays Jobs page.
-     *
-     * @return string
-     */
-    public function actionJobs()
-    {
-        $searchModel = new SearchForm();
-        
-//        $searchModel = new SearchForm([
-//            'location' => '',
-//            'profession' => '',
-//            'suplierId' => '',
-//            'freetext' => '',
-//        ]);
-
-        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        if ($searchModel->load(Yii::$app->request->get())) {
-            return $searchModel->search(true);
-        }
-        
-        return $searchModel->search(true);
-    }
-    
-    /**
-     * Displays Jobs page.
-     *
-     * @return string
-     */
-    public function actionJob($jobId)
-    {
-        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        $model = new \app\models\Job(['jobId' => $jobId]);
-        
-                
-        return $model->getJob();
     }
 }
