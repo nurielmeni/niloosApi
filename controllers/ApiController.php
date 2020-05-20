@@ -47,7 +47,7 @@ class ApiController extends \yii\web\Controller
 
     public function actionJobs()
     {
-        $searchModel = new SearchForm();
+        $searchModel = new SearchForm($this->project);
         
 //        $searchModel = new SearchForm([
 //            'location' => '',

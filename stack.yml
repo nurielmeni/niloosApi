@@ -1,5 +1,22 @@
 version: '3.4'
 services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - nlsapinet
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - nlsapinet
   php:
     image: yiisoftware/yii2-php:7.1-apache
     volumes:
@@ -14,3 +31,5 @@ services:
       - nlsapinet
 networks:
   nlsapinet:
+volumes:
+  db-data:

@@ -21,96 +21,57 @@ class Niloos
     const LANG_HEB = '1037';
     const LANG_ENG = '1033';
     
-    private $settingsClass;
     private $format = 'd-m-Y H:i:s';
     private $cache;
     private $settings;
-    private $settingsFile = '@app/config/settings.xml';
-    private $nlsSecurityWsdlUrl = 'https://hunterdirectory.hunterhrms.com/SecurityService.svc?wsdl';
-    private $nlsCardsWsdlUrl = 'https://huntercards.hunterhrms.com/HunterCards.svc?wsdl';
-    private $nlsDirectoryWsdlUrl = 'https://directoryservicetestbasic.hunterhrms.com/DirectoryManagementService.svc?wsdl';
-    private $nsoftApplicationId = '037685f2-9adc-4d65-954b-7212be692d85';
-    private $nlsSecurityDomain = 'elbitsys';
-    private $siteId = '037685f2-9adc-4d65-954b-7212be692d85';
-    private $username = 'campaign';
-    private $password = 'pass2019';
-    private $languageCode;
     private $client;
     private $auth;
     
-    public function __construct() {
+    public function __construct($settings) {
         $this->cache = \Yii::$app->cache;
-        $this->settingsClass = new Settings();
         
         // Flush cache
         if (key_exists('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
             $this->cache->flush();
         }
             
-        $this->settings = $this->settingsClass->getSettings();
-        $this->setProperties($this->settings);
+        $this->settings = $settings;
         $this->authenticate();
-        $this->languageCode = self::LANG_HEB;
+        $this->settings->languageCode = self::LANG_HEB;
     }
     
-    private function loadSettings() {
-        // custom initialization code goes here
-        $url = Url::to($this->settingsFile);
-        if (file_exists($url)) {
-            $this->settings = simplexml_load_file($url);
-            if (!$this->settings) {
-                \Yii::error('Could not load settings file on console command', 'Niloos Get Service');
-                die;
-            }
-            $this->setProperties();
-        } else {
-            \Yii::error('Settings file not exist console command', 'Niloos Get Service');
-        }
-    }
-    
-    private function setProperties($settingsArr) {
-        $this->nlsSecurityWsdlUrl = $settingsArr['nlsSecurityWsdlUrl'];
-        $this->nlsCardsWsdlUrl = $settingsArr['nlsCardsWsdlUrl'];
-        $this->nlsDirectoryWsdlUrl = $settingsArr['nlsDirectoryWsdlUrl'];
-        $this->nsoftApplicationId = $settingsArr['nsoftApplicationId'];
-        $this->nlsSecurityDomain = $settingsArr['nlsSecurityDomain'];
-        $this->siteId = $settingsArr['nsoftSiteId'];
-        $this->username = $settingsArr['nlsSecurityUsername'];
-        $this->password = $settingsArr['nlsSecurityPassword'];
-        $this->languageCode = $settingsArr['languageCode'];
-    }
     
     private function setClient($service) {
         switch ($service) {
             case 'security':
                 /** Define SOAP headers for token authentication **/
                 $soap_headers = [
-                    new SoapHeader('_', 'NiloosoftCred0', $this->nsoftApplicationId),
-                    new SoapHeader('_', 'NiloosoftCred1', $this->nlsSecurityDomain . '\\' . $this->username),
-                    new SoapHeader('_', 'NiloosoftCred2', $this->password)
+                    new SoapHeader('_', 'NiloosoftCred0', $this->settings->nsoftApplicationId),
+                    new SoapHeader('_', 'NiloosoftCred1', $this->settings->nlsSecurityDomain . '\\' . $this->settings->nlsSecurityUsername),
+                    new SoapHeader('_', 'NiloosoftCred2', $this->settings->nlsSecurityPassword)
                 ];
-                $url = $this->nlsSecurityWsdlUrl;
+                $url = $this->settings->nlsSecurityWsdlUrl;
                 break;
             case 'sec':
                 $soap_headers = [
                     new SoapHeader('_', 'NiloosoftCred1', isset($this->auth) ? $this->auth->UsernameToken : null),
                     new SoapHeader('_', 'NiloosoftCred2', isset($this->auth) ? $this->auth->PasswordToken : null)
                 ];
-                $url = $this->nlsSecurityWsdlUrl;
+                $url = $this->settings->nlsSecurityWsdlUrl;
                 break;
             case 'cards':
                 $soap_headers = [
                     new SoapHeader('_', 'NiloosoftCred1', isset($this->auth) ? $this->auth->UsernameToken : null),
                     new SoapHeader('_', 'NiloosoftCred2', isset($this->auth) ? $this->auth->PasswordToken : null)
                 ];
-                $url = $this->nlsCardsWsdlUrl;
+                $url = $this->settings->nlsCardsWsdlUrl;
                 break;
             case 'directory':
                 $soap_headers = [
                     new SoapHeader('_', 'NiloosoftCred1', isset($this->auth) ? $this->auth->UsernameToken : null),
                     new SoapHeader('_', 'NiloosoftCred2', isset($this->auth) ? $this->auth->PasswordToken : null)
                 ];
-                $url = $this->nlsDirectoryWsdlUrl;
+                $url = $this->settings->nlsDirectoryWsdlUrl;
                 break;
             default:
                 $this->client = null;
@@ -138,13 +99,13 @@ class Niloos
     {
         $transactionCode = Helper::newGuid();
         try {
-            $param[] = new SoapVar($this->nlsSecurityDomain . '\\' . $this->username, XSD_STRING, null, null, 'userName', null);
-            $param[] = new SoapVar($this->password, XSD_STRING, null, null, 'password', null);
+            $param[] = new SoapVar($this->settings->nlsSecurityDomain . '\\' . $this->settings->nlsSecurityUsername, XSD_STRING, null, null, 'userName', null);
+            $param[] = new SoapVar($this->settings->nlsSecurityPassword, XSD_STRING, null, null, 'password', null);
             $param[] = new SoapVar($transactionCode, XSD_STRING, null, null, 'transactionCode', null);
-            $param[] = new SoapVar($this->siteId, XSD_STRING, null, null, 'applicationSecret', null);
+            $param[] = new SoapVar($this->settings->nsoftSiteId, XSD_STRING, null, null, 'applicationSecret', null);
             $options = new SoapVar($param, SOAP_ENC_OBJECT, null, null);
 
-            $this->auth = \Yii::$app->cache->getOrSet('consoleAuth', function () use ($options){
+            $this->auth = \Yii::$app->cache->getOrSet($this->settings->project, function () use ($options){
                 $this->setClient('security');
                 return $this->client->__soapCall("Authenticate2", array($options));
             }, 60 * 60 * 24);
@@ -174,7 +135,7 @@ class Niloos
         if (key_exists('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
             $this->cache->flush();
         }
-        $languageCode = $this->languageCode;
+        $languageCode = $this->settings->languageCode;
         
         $res = \Yii::$app->cache->getOrSet('categories', function () use ($parentId, $languageCode){
             $this->setClient('directory');
@@ -244,7 +205,7 @@ class Niloos
         if (key_exists('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
             $this->cache->flush();
         }
-        $languageCode = $this->languageCode;
+        $languageCode = $this->settings->languageCode;
         
         $res = \Yii::$app->cache->getOrSet('List_' . $listName, function () use ($listName, $languageCode){
             $this->setClient('directory');

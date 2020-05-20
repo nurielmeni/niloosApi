@@ -21,7 +21,6 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
-        'css/memad3.css',
     ];
     public $js = [
         'js/site.js',
@@ -29,7 +28,6 @@ class AppAsset extends AssetBundle
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
-        'airani\bootstrap\BootstrapRtlAsset',
-        
+        //'airani\bootstrap\BootstrapRtlAsset',   
     ];
 }

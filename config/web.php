@@ -6,9 +6,10 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'niloosApi',
     'name' => 'Niloos Api',
-    'language' => 'he-IL',
+    'language' => 'en-US',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'homeUrl'=> ['settings/index'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -66,11 +67,14 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'api/<project:\w+>/<action:\w+>' => 'api/<action>',
-                'api/<project:\w+>/job/<jobId:\d+>' => 'api/job',
+                '<controller:settings>' => 'settings',
+                '<controller:api>/<project:\w+>/<action:\w+>' => 'api/<action>',
+                '<controller:api>/<project:\w+>/job/<jobId:\d+>' => 'api/job',
+                // the site index renders the Vue html file (provide project id)
                 '<project:\w+>' => '/site/index'
             ],
         ],
+        'defaultRoute' => 'site/index',
     ],
     'params' => $params,
 ];

@@ -7,6 +7,8 @@ use yii\base\Model;
 use app\components\Niloos;
 use yii\helpers\ArrayHelper;
 use app\helpers\Helper;
+use app\models\Settings;
+use yii\web\BadRequestHttpException;
 
 /**
  * SearchForm is the model behind the contact form.
@@ -24,11 +26,19 @@ class SearchForm extends Model
     private $niloos;
     private $settings;
     
-    public function __construct($config = array()) {
-        parent::__construct($config);
-        $this->settings = new \app\components\Settings();
-        $this->settings = $this->settings->getSettings();
-        $this->niloos = new Niloos();
+    public function __construct($project = null) {
+        if (!$project) {
+            throw new BadRequestHttpException('Search form must get the project to work with');
+        }
+        parent::__construct();
+        
+        $this->settings = Settings::findOne(['project' => $project]);
+        
+        if (!$this->settings) {
+            throw new BadRequestHttpException('Search form could not find the specified project: ' . $project);
+        }
+        
+        $this->niloos = new Niloos($this->settings);
         $this->freetext = '';
     }
     

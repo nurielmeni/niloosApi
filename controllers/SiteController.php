@@ -9,6 +9,8 @@ use yii\base\Theme;
 use app\models\SearchForm;
 use yii\web\UploadedFile;
 use app\models\ApplyForm;
+use app\models\Settings;
+use yii\web\BadRequestHttpException;
 
 class SiteController extends \yii\web\Controller
 {
@@ -92,6 +94,10 @@ class SiteController extends \yii\web\Controller
      */
     public function actionIndex($project)
     {
+        if (!Settings::findOne(['project' => $project])) {
+            throw new BadRequestHttpException('Project does not exist: ' . $project);
+        }
+        
         // Set the theme based on the project
         $this->switchTheme($project);
         $this->layout = 'vue';
