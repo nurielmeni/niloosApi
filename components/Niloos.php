@@ -97,6 +97,7 @@ class Niloos
      */
     private function authenticate() 
     {
+        $chachName = 'auth' . $this->settings->project;
         $transactionCode = Helper::newGuid();
         try {
             $param[] = new SoapVar($this->settings->nlsSecurityDomain . '\\' . $this->settings->nlsSecurityUsername, XSD_STRING, null, null, 'userName', null);
@@ -105,7 +106,7 @@ class Niloos
             $param[] = new SoapVar($this->settings->nsoftSiteId, XSD_STRING, null, null, 'applicationSecret', null);
             $options = new SoapVar($param, SOAP_ENC_OBJECT, null, null);
 
-            $this->auth = \Yii::$app->cache->getOrSet($this->settings->project, function () use ($options){
+            $this->auth = \Yii::$app->cache->getOrSet($chachName, function () use ($options){
                 $this->setClient('security');
                 return $this->client->__soapCall("Authenticate2", array($options));
             }, 60 * 60 * 24);
@@ -136,8 +137,9 @@ class Niloos
             $this->cache->flush();
         }
         $languageCode = $this->settings->languageCode;
-        
-        $res = \Yii::$app->cache->getOrSet('categories', function () use ($parentId, $languageCode){
+        $chachName = 'categories' . $this->settings->project;
+
+        $res = \Yii::$app->cache->getOrSet($chachName, function () use ($parentId, $languageCode){
             $this->setClient('directory');
             $list = [];
             
@@ -176,7 +178,8 @@ class Niloos
     }
     
     public function jobGetConsideringIsDiscreetFiled($jobId) {
-        $res = \Yii::$app->cache->getOrSet('jobGetConsideringIsDiscreetFiled' . $jobId, function () use ($jobId){
+        $chachName = 'jobGetConsideringIsDiscreetFiled' . $this->settings->project . $jobId;
+        $res = \Yii::$app->cache->getOrSet($chachName, function () use ($jobId){
             $this->setClient('cards');
 
             $params = [
@@ -207,7 +210,8 @@ class Niloos
         }
         $languageCode = $this->settings->languageCode;
         
-        $res = \Yii::$app->cache->getOrSet('List_' . $listName, function () use ($listName, $languageCode){
+        $chachName = 'getListByListName' . $this->settings->project . $listName;
+        $res = \Yii::$app->cache->getOrSet($chachName, function () use ($listName, $languageCode){
             $this->setClient('directory');
             $List = [];
             
@@ -249,7 +253,8 @@ class Niloos
         if (key_exists('flushCache', \Yii::$app->params) && \Yii::$app->params['flushCache']) {
             $this->cache->flush();
         }
-        return $this->cache->getOrSet($cacheKey, function () use ($filter){
+        $chachName = 'jobsGetByFilter' . $this->settings->project . $cacheKey;
+        return $this->cache->getOrSet($chachName, function () use ($filter){
                 try {
                     $this->setClient('cards');
                     $jobsXml =  $this->client->JobsGetByFilter($filter)->JobsGetByFilterResult->any;
