@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 use yii\helpers\Url;
 use app\components\Niloos;
+use yii\web\BadRequestHttpException;
 
 /**
  * This is the model class for Job".
@@ -13,11 +14,16 @@ use app\components\Niloos;
  */
 class Job extends \yii\base\Model {
     private $niloos;
+    public $settings;
     public $jobId;
     
     public function __construct($config = array()) {
         parent::__construct($config);
-        $this->niloos = new Niloos();
+        if (!$this->jobId) {
+            throw new BadRequestHttpException('Job must get the Job ID to work with');
+        }
+        
+        $this->niloos = new Niloos($this->settings);
     }
 
     /**

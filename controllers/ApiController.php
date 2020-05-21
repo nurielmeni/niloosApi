@@ -9,6 +9,7 @@ use app\models\SearchForm;
 use yii\web\UploadedFile;
 use app\models\ApplyForm;
 use yii\web\BadRequestHttpException;
+use app\models\Settings;
 
 class ApiController extends \yii\web\Controller
 {
@@ -39,7 +40,7 @@ class ApiController extends \yii\web\Controller
     
     public function actionJob($jobId)
     {
-        $model = new \app\models\Job(['jobId' => $jobId]);
+        $model = new \app\models\Job(['jobId' => $jobId, 'settings' => $this->settings]);
         
                 
         return $model->getJob();
@@ -47,7 +48,8 @@ class ApiController extends \yii\web\Controller
 
     public function actionJobs()
     {
-        $searchModel = new SearchForm($this->project);
+        
+        $searchModel = new SearchForm($this->getSettings());
         
 //        $searchModel = new SearchForm([
 //            'location' => '',
@@ -85,5 +87,19 @@ class ApiController extends \yii\web\Controller
 
             return 'OK';
         //}
+    }
+    
+    public function getSettings() {
+        if (!$this->project) {
+            throw new BadRequestHttpException('Niloos Api must get a project to work with');
+        }
+        
+        $settings = Settings::findOne(['project' => $this->project]);
+        
+        if (!$settings) {
+            throw new BadRequestHttpException('Search form could not find the specified project: ' . $project);
+        }
+        
+        return $settings;
     }
 }

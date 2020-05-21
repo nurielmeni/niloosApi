@@ -26,17 +26,8 @@ class SearchForm extends Model
     private $niloos;
     private $settings;
     
-    public function __construct($project = null) {
-        if (!$project) {
-            throw new BadRequestHttpException('Search form must get the project to work with');
-        }
-        parent::__construct();
-        
-        $this->settings = Settings::findOne(['project' => $project]);
-        
-        if (!$this->settings) {
-            throw new BadRequestHttpException('Search form could not find the specified project: ' . $project);
-        }
+    public function __construct($settings) {
+        $this->settings = $settings;
         
         $this->niloos = new Niloos($this->settings);
         $this->freetext = '';
