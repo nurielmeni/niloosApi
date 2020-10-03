@@ -4,13 +4,15 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
         {
-            "type": "chrome",
+            "name": "Listen for XDebug",
+            "type": "php",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8000",
-            "webRoot": "${workspaceFolder}"
+            "port": 9005,
+            "stopOnEntry": false,
+            "pathMappings": {
+                "/app": "${workspaceRoot}",
+            }
         },
     ]
 }
