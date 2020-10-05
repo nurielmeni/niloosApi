@@ -20,6 +20,12 @@ class ApiController extends \yii\web\Controller
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
     }
 
+    public static function getAllowedOrigins() {
+        return [
+            '*',
+        ];
+    }
+
     public function behaviors()
     {
         $behaviors = parent::behaviors();
@@ -27,7 +33,7 @@ class ApiController extends \yii\web\Controller
         $behaviors['corsFilter'] = [
             'class' => \yii\filters\Cors::className(),
             'cors' => [
-                'Access-Control-Allow-Origin' => ['*'],
+                'Access-Control-Allow-Origin' => static::getAllowedOrigins(),
                 'Access-Control-Request-Method' => ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
                 'Access-Control-Request-Headers' => ['*'],
                 'Access-Control-Allow-Credentials' => true,
@@ -36,6 +42,15 @@ class ApiController extends \yii\web\Controller
             ]
         ];
         
+        $behaviors['access'] = [           
+            'class' => AccessControl::className(),           
+            'rules' => [   
+                [  
+                    'allow' => true,   
+                    'actions' => ['options'], // important for cors ie. pre-flight requests   
+                ], 
+            ]   
+        ];
         return $behaviors;
     }    
 

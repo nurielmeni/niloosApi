@@ -23,7 +23,7 @@ services:
     networks:
       - back-niloosapi
   php:
-    image: yiisoftware/yii2-php:7.1-apache
+    image: yiisoftware/yii2-php:7.3-apache
     depends_on: 
       - db
     environment: 
