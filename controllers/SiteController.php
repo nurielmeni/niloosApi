@@ -25,18 +25,6 @@ class SiteController extends \yii\web\Controller
     public function behaviors()
     {
         return [
-            'corsFilter' => [
-                'class' => \yii\filters\Cors::className(),
-                'cors' => [
-                    'Origin' => ['*'], 
-                    'Accept' => ['Origin', 'X-Requested-With', 'Content-Type', 'Accept'], 
-                    'Access-Control-Request-Method' => ['GET', 'POST'], 
-                    'Access-Control-Request-Headers' => ['*'], 
-                    'Access-Control-Allow-Credentials' => null, 
-                    'Access-Control-Max-Age' => 86400, 
-                    'Access-Control-Expose-Headers' => []
-                ],
-            ],
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['logout'],

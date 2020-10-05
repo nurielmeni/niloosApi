@@ -20,6 +20,25 @@ class ApiController extends \yii\web\Controller
             \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
     }
 
+    public function behaviors()
+    {
+        $behaviors = parent::behaviors();
+        
+        $behaviors['corsFilter'] = [
+            'class' => \yii\filters\Cors::className(),
+            'cors' => [
+                'Access-Control-Allow-Origin' => ['*'],
+                'Access-Control-Request-Method' => ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
+                'Access-Control-Request-Headers' => ['*'],
+                'Access-Control-Allow-Credentials' => true,
+                'Access-Control-Max-Age' => 86400,
+                'Access-Control-Expose-Headers' => [],
+            ]
+        ];
+        
+        return $behaviors;
+    }    
+
     public function beforeAction($action)
     {
         $this->project = Yii::$app->request->get('project');
